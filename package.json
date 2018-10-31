@@ -4,8 +4,42 @@
   "description": "Therapy AI for Software Developers",
   "main": "src/sever/server.js",
   "scripts": {
-    "test": "start"
+    "dev": "webpack -d --watch",
+    "start": "concurrently \"nodemon src/server/server.js\" \"webpack -d --watch\"",
+    "build": "webpack -p",
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon src/server/server.js",
+    "postinstall": "webpack",
+    "heroku-postbuild": "webpack -p"
   },
   "author": "Riley Griffin",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "lowdb": "^1.0.0",
+    "mongoose": "^5.3.8",
+    "path": "^0.12.7",
+    "webpack": "^4.23.1",
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.18.4",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "@babel/cli": "^7.0.0-beta.40",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-plugin-lodash": "^3.3.2",
+    "babel-plugin-react-transform": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "webpack-cli": "^3.1.2"
+  }
 }
