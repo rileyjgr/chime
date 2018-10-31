@@ -1,0 +1,11 @@
+{
+  "name": "chime",
+  "version": "1.0.0",
+  "description": "Therapy AI for Software Developers",
+  "main": "src/sever/server.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Riley Griffin",
+  "license": "MIT"
+}
