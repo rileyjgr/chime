@@ -26,6 +26,7 @@
     "babel-plugin-react-transform": "^3.0.0",
     "body-parser": "^1.18.3",
     "botkit": "^0.6.18",
+    "brain.js": "^1.4.2",
     "concurrently": "^4.0.1",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
