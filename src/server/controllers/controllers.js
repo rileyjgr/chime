@@ -43,10 +43,9 @@ module.exports = {
 
                 await newUser.save();
 
-                // not sure how we call their name here..
                 res.json({
-                    speech: 'Welcome %name%',
-                    displayText: 'Welcome %name%',
+                    speech: 'Welcome'+ name,
+                    displayText: 'Welcome'+ name,
                     source: 'user'
                 });
                 break;
