@@ -6,7 +6,8 @@ The Company Assistant.
 | Platform   | Support |
 | ---------- | ------- |
 |    Slack   |   Yes   |
-| GoogleHome | In Dev  |
+| GoogleHome | Yes (Hey Google, talk to Dr. Chime |
+| Call Support | Yes (+1 210-745-6179 temp number)|
 
 # Current Support
 
