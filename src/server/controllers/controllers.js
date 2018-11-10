@@ -50,6 +50,9 @@ module.exports = {
                 });
                 break;
         }
+    },
+    heatMap: async(request, res)=>{
 
     }
+
 };

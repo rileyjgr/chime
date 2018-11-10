@@ -28,7 +28,7 @@ module.exports = {
                 api.signUp(request, res);
                 break;
             case 'heatmap':
-                api.heatmap(location, res);
+                api.heatMap(request, res);
                 break;
 
         }
