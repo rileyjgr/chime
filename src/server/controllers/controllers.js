@@ -36,6 +36,8 @@ module.exports = {
                 });
                 break;
             case 'false':
+                // this might be different.
+                const {name, title, company} = request.value.body;
 
                 const newUser = new User({name, title, company});
 

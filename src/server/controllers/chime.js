@@ -6,6 +6,7 @@ module.exports = {
     chime: async(req, res)=>{
         console.log(req);
         const action = req.body.result.action;
+        // lol.
         const request = req.body;
         // not sure if this is correct or not
         const user = req.body.result.name;
@@ -19,7 +20,8 @@ module.exports = {
             case 'calender':
                api.calender(request, res);
                break;
-            case '':
+            case 'signup':
+                api.signUp(request, res);
                 break;
 
         }
