@@ -6,15 +6,19 @@ module.exports = {
     chime: async(req, res)=>{
         console.log(req);
         const action = req.body.result.action;
+        const location = req.body.result.location;
+
         // lol.
         const request = req.body;
+
         // not sure if this is correct or not
         const user = req.body.result.name;
+
         // each action will be a case in a switch statement.
         // each action is an intent.
 
         switch(action){
-            case 'hello':
+            case 'Hello':
                 api.hello(request, res);
                 break;
             case 'calender':
@@ -22,6 +26,9 @@ module.exports = {
                break;
             case 'signup':
                 api.signUp(request, res);
+                break;
+            case 'heatmap':
+                api.heatMap(request, res);
                 break;
 
         }
