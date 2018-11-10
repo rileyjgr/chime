@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const controllers = require('../controllers/controllers.js');
 const chime = require('../controllers/chime.js');
 
 module.exports ={
