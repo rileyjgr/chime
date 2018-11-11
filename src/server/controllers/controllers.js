@@ -1,17 +1,12 @@
 const User = require('../models/user');
 
 module.exports = {
+
     // we can add entities to each intent, to get data from the user such as their slack name.
     // we can then store this stuff in a database (in our case mongodb).
-
-    hello: async(request,res)=>{
-
-        // example res of what we send back to user
-        await res.json({
-            speech: 'surprise',
-            displayText: 'Hi!',
-            source: 'hi'
-        });
+    hello: async(conv, params)=>{
+        // example below on how to retriew user information.
+        conv.ask(`How are you, ${params.name}?`);
     },
 
     calender: async(request, res)=>{
