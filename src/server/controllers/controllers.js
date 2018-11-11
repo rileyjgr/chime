@@ -6,12 +6,11 @@ module.exports = {
     // we can then store this stuff in a database (in our case mongodb).
     hello: async(request, res)=>{
         console.log(request);
-        await res.json({
+        res.json({
             speech: 'Howdy.',
             displayText: 'Howdy.',
             source: 'hello'
         })
-
     },
 
     calender: async(request, res)=>{
