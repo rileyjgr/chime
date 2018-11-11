@@ -1,37 +1,17 @@
 const brain = require('brain.js');
 const api = require('./controllers.js');
-
+const { dialogflow, Image, Table, Carousel } = require('actions-on-google');
 
 module.exports = {
-    chime: async(req, res)=>{
-        console.log(req);
-        const action = req.body.result.action;
-        const location = req.body.result.location;
+    chime: async(conv, params)=>{
+        const flow = dialogflow({
+            debug: true,
+        });
+        // This is how you call your intent.
+        // since we already are using app for express, i changed dialogue flows base name
+        // to flow instead of app.
+        flow.intent('hello', api.hello(conv, params));
 
-        // lol.
-        const request = req.body;
-
-        // not sure if this is correct or not
-        const user = req.body.result.name;
-
-        // each action will be a case in a switch statement.
-        // each action is an intent.
-
-        switch(action){
-            case 'Hello':
-                api.hello(request, res);
-                break;
-            case 'calender':
-               api.calender(request, res);
-               break;
-            case 'signup':
-                api.signUp(request, res);
-                break;
-            case 'heatmap':
-                api.heatMap(request, res);
-                break;
-
-        }
     }
 };
 

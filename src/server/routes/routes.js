@@ -14,9 +14,11 @@ module.exports ={
     },
     chime: async(app)=>{
         app.use(bodyParser.json());
+
         app.get('/chime', (req, res)=>{
             res.send('hello from chime')
         });
+
         app.post('/chime', chime.chime);
     }
 };
