@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const { WebhookClient } = require('dialogflow-fulfillment');
 const chime = require('../controllers/chime.js');
 
 module.exports ={
@@ -19,7 +20,8 @@ module.exports ={
             res.send('hello from chime')
         });
 
-        app.post('/chime', chime.chime);
+
+        app.post('/chime', (req, res) =>{ chime.chime(req, res) });
     }
 };
 

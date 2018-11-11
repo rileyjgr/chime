@@ -3,15 +3,18 @@ const api = require('./controllers.js');
 const { dialogflow, Image, Table, Carousel } = require('actions-on-google');
 
 module.exports = {
-    chime: async(conv, params)=>{
-        const flow = dialogflow({
-            debug: true,
-        });
-        // This is how you call your intent.
-        // since we already are using app for express, i changed dialogue flows base name
-        // to flow instead of app.
-        flow.intent('hello', api.hello(conv, params));
+    chime: async(req, res)=>{
+        console.log(req);
+        const request = req.body.result;
+        const intent = req.body.arguments.rawText;
 
+        switch(intent){
+            case 'hello':
+                api.hello(request, res);
+        }
     }
+
+
+
 };
 
