@@ -4,9 +4,14 @@ module.exports = {
 
     // we can add entities to each intent, to get data from the user such as their slack name.
     // we can then store this stuff in a database (in our case mongodb).
-    hello: async(conv, params)=>{
-        // example below on how to retriew user information.
-        conv.ask(`How are you, ${params.name}?`);
+    hello: async(request, res)=>{
+        console.log(request);
+        await res.json({
+            speech: 'Howdy.',
+            displayText: 'Howdy.',
+            source: 'hello'
+        })
+
     },
 
     calender: async(request, res)=>{

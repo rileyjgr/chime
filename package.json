@@ -29,6 +29,7 @@
     "botkit": "^0.6.18",
     "brain.js": "^1.4.2",
     "concurrently": "^4.0.1",
+    "dialogflow-fulfillment": "^0.6.1",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "hoek": "^5.0.4",
