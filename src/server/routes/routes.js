@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const chime = require('../controllers/chime.js');
+const determineIntent = require('../controllers/controllers');
 
 require('dotenv');
 //dialogue flow request config
@@ -17,7 +18,6 @@ module.exports ={
         });
     },
     chime: async(app)=>{
-        const urlencodedParser = bodyParser.urlencoded({ extended: false });
         const parseJson = bodyParser.json();
 
         app.get('/chime', (req, res)=>{
@@ -34,31 +34,7 @@ module.exports ={
             console.log(request);
             console.log(intent);
 
-            switch(intent){
-                default:
-                    const google = 'test';
-                    const slack = 'test';
-                    const def = 'test';
-                    flow.googleResponse = google.toString();
-                    flow.slackResponse = slack.toString();
-                    flow.defaultText = def.toString();
-                    res.json(flow.responseConfig);
-                    break;
-                case 'Hello':
-                    console.log('hit intent:'+ intent);
-                    //code in here
-                    res.json(flow.responseConfig);
-                    break;
-                case 'Feedback':
-                    console.log('hit intent'+ intent);
-                    chime.feedback(request);
-                    break;
-                case 'Event':
-                    console.log('hit intent: '+ intent);
-                    chime.event(request);
-                    break;
-            }
-
+            determineIntent.switch(intent, request, res);
         });
     }
 };

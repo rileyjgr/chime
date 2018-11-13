@@ -1,57 +1,38 @@
-const User = require('../models/user');
+const chime = require('./chime');
+const flow = require('../dialogueflow.config');
 
 module.exports = {
-
-    // we can add entities to each intent, to get data from the user such as their slack name.
-    // we can then store this stuff in a database (in our case mongodb).
-    hello: async(request, res)=>{
-        console.log(request);
-        res.json({
-            speech: 'Howdy.',
-            displayText: 'Howdy.',
-            source: 'hello'
-        })
-    },
-
-    calender: async(request, res)=>{
-        // Your code up here
-
-        await res.json({
-           // your response here
-        });
-    },
-
-    // logic for user sign up...
-
-    signUp: async(request, res)=>{
-        const user = request.body.name; // or whatever it is...
-        const founderUser = await User.findOne({user});
-        switch(founderUser){
-            case 'true':
-                res.json({
-                    speech: 'Try logging in',
-                    displayText: 'You already have an account.',
-                    source: 'user'
-                });
+    switch: async(intent, request, res)=>{
+        switch(intent){
+            default:
+                const google = 'test';
+                const slack = 'test';
+                const def = 'test';
+                flow.googleResponse = google.toString();
+                flow.slackResponse = slack.toString();
+                flow.defaultText = def.toString();
+                res.json(flow.responseConfig);
                 break;
-            case 'false':
-                // this might be different.
-                const {name, title, company} = request.value.body;
-
-                const newUser = new User({name, title, company});
-
-                await newUser.save();
-
-                res.json({
-                    speech: 'Welcome'+ name,
-                    displayText: 'Welcome'+ name,
-                    source: 'user'
-                });
+            case 'Hello':
+                console.log('hit intent:'+ intent);
+                chime.hello(request, res);
+                //code in here
+                res.json(flow.responseConfig);
+                break;
+            case 'Feedback':
+                console.log('hit intent'+ intent);
+                chime.feedback(request, res);
+                break;
+            case 'Event':
+                console.log('hit intent: '+ intent);
+                chime.event(request, res);
+                break;
+            case 'SignUp':
+                chime.signUp(request, res);
+                break;
+            case 'getPersonalInfo':
+                chime.getInfo(request, res);
                 break;
         }
-    },
-    heatMap: async(request, res)=>{
-
     }
-
 };
