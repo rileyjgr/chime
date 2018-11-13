@@ -1,4 +1,5 @@
 const Feedback = require('../models/feedback');
+const Event = require('../models/event');
 
 module.exports = {
     feedback: async(request)=>{
@@ -11,6 +12,11 @@ module.exports = {
     },
     event: async(request)=>{
         console.log(request);
+        const {event, date, time, people} = request.parameters;
+        const newEvent = new Event({event, date, time, people});
+
+        await newEvent.save();
+
 
     }
 };
