@@ -1,8 +1,11 @@
 const chime = require('./chime');
 const flow = require('../dialogueflow.config');
+const functions = require('firebase-functions');
+const {WebhookClient} = require('dialogflow-fulfillment');
+
 
 module.exports = {
-    switch: async(intent, request, res)=>{
+    switch: async(intent, req, res)=>{
         switch(intent){
             default:
                 const google = 'test';
@@ -15,23 +18,23 @@ module.exports = {
                 break;
             case 'Hello':
                 console.log('hit intent:'+ intent);
-                chime.hello(request, res);
+                chime.hello(req, res);
                 //code in here
                 res.json(flow.responseConfig);
                 break;
             case 'Feedback':
                 console.log('hit intent'+ intent);
-                chime.feedback(request, res);
+                chime.feedback(req, res);
                 break;
             case 'Event':
                 console.log('hit intent: '+ intent);
-                chime.event(request, res);
+                chime.event(req, res);
                 break;
             case 'SignUp':
-                chime.signUp(request, res);
+                chime.signUp(req, res);
                 break;
             case 'getPersonalInfo':
-                chime.getInfo(request, res);
+                chime.getInfo(req, res);
                 break;
         }
     }
