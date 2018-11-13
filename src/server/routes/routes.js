@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const request = require('request');
-const { WebhookClient } = require('dialogflow-fulfillment');
 const chime = require('../controllers/chime.js');
+
+require('dotenv');
+//dialogue flow request config
+const flow = require('../dialogueflow.config');
 
 module.exports ={
 
@@ -23,34 +25,39 @@ module.exports ={
         });
 
 
-        app.post('/chime', urlencodedParser, (req, res) =>{
+        app.post('/chime', parseJson, (req, res) =>{
 
-            const json = {
-                name :   req.body.userName,
-                message:  req.body.message,
-                topicId : req.body.topicId,
-            };
+            // intent will always come in however you set it up on dialogue flow
+            const intent = req.body.queryResult.intent.displayName;
 
-            const options = {
-                url: 'https://fa077316.ngrok.io/chime',
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-API-Key' : 'API-key'
-                },
-                json:json
-            };
-            request(options, (err, res, body)=>{
-                if (res && (res.statusCode === 200 || res.statusCode === 201)) {
-                    console.log("response is ==>");
-                    console.log(res);
-                    chime.chime(req, res);
-                }
-                else {
-                    console.log("error is "+ err + " = and response code is ="+ res.statusCode );
-                }
-            });
-            return res;
+            // params will be passed in here
+
+            const request = req.body.queryResult;
+
+            console.log(request);
+            console.log(intent);
+
+
+            switch(intent){
+                default:
+                    const google = 'test';
+                    const slack = 'test';
+                    const def = 'test';
+                    flow.googleResponse = google.toString();
+                    flow.slackResponse = slack.toString();
+                    flow.defaultText = def.toString();
+                    res.json(flow.responseConfig);
+                    break;
+                case 'Hello':
+                    console.log('hit intent:'+ intent);
+                    //code in here
+                    res.json(flow.responseConfig);
+                    break;
+                case 'Feedback':
+                    console.log('hit intent'+ intent);
+                    chime.feedback(request);
+            }
+
         });
     }
 };
