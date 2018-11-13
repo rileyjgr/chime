@@ -13,7 +13,7 @@ The Company Assistant.
 
 Chat bot features
 
-#Future Development
+# Future Development
 
 - Google Calendar events
 - Anonymous feedback

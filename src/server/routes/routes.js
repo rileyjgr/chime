@@ -26,17 +26,13 @@ module.exports ={
 
 
         app.post('/chime', parseJson, (req, res) =>{
-
             // intent will always come in however you set it up on dialogue flow
             const intent = req.body.queryResult.intent.displayName;
-
             // params will be passed in here
-
             const request = req.body.queryResult;
 
             console.log(request);
             console.log(intent);
-
 
             switch(intent){
                 default:
@@ -56,6 +52,11 @@ module.exports ={
                 case 'Feedback':
                     console.log('hit intent'+ intent);
                     chime.feedback(request);
+                    break;
+                case 'Event':
+                    console.log('hit intent: '+ intent);
+                    chime.event(request);
+                    break;
             }
 
         });
