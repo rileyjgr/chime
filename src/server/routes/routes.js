@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const chime = require('../controllers/chime.js');
 const determineIntent = require('../controllers/controllers');
+const fulfillment = require('../controllers/dialogflowcontroller');
 
 require('dotenv');
 //dialogue flow request config
@@ -19,22 +20,22 @@ module.exports ={
     },
     chime: async(app)=>{
         const parseJson = bodyParser.json();
-
         app.get('/chime', (req, res)=>{
             res.send('hello from chime')
         });
 
-
-        app.post('/chime', parseJson, (req, res) =>{
+        app.post('/chime', parseJson, (request, response) =>{
             // intent will always come in however you set it up on dialogue flow
-            const intent = req.body.queryResult.intent.displayName;
+            // const intent = req.body.queryResult.intent.displayName;
             // params will be passed in here
-            const request = req.body.queryResult;
+            // const request = req.body.queryResult;
 
-            console.log(request);
-            console.log(intent);
+            // console.log(request);
+            // console.log(intent);
 
-            determineIntent.switch(intent, request, res);
+            fulfillment.dialogflowFirebaseFulFillment(request, response);
+
+            // determineIntent.switch(intent, req, res);
         });
     }
 };
