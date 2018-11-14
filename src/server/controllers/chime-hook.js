@@ -7,6 +7,9 @@ module.exports = {
         agent.add('Hello THERE WE WORK BUDDY.')
     },
     event: async(agent)=>{
+        // this is how you get parameters
+        console.log(agent.parameters);
+        
         agent.add('events hit');
     },
     feedback: async(agent)=>{
