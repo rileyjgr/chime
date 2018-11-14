@@ -7,7 +7,6 @@ const chime = require('./chime-hook');
 exports.dialogflowFirebaseFulFillment = functions.https.onRequest((request, response)=>{
     const agent = new WebhookClient({request, response});
 
-    console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
     console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
 
     let intentMap = new Map();
@@ -16,7 +15,8 @@ exports.dialogflowFirebaseFulFillment = functions.https.onRequest((request, resp
     intentMap.set('Feedback', chime.feedback);
     intentMap.set('Event',chime.event);
     intentMap.set('getPersonalInfo',chime.getInfo);
-
+    intentMap.set('weather', chime.weather);
+    
     agent.handleRequest(intentMap);
 
 });

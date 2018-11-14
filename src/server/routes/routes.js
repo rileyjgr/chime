@@ -1,16 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const chime = require('../controllers/chime.js');
-const determineIntent = require('../controllers/controllers');
 const fulfillment = require('../controllers/dialogflowcontroller');
 
 require('dotenv');
-//dialogue flow request config
-const flow = require('../dialogueflow.config');
 
 module.exports ={
-
     html: async(app)=>{
         app.use(express.static(`${__dirname}/../../dist`));
         app.use(express.static(`${__dirname}/../../dist/js/contact.js`));
@@ -25,17 +20,7 @@ module.exports ={
         });
 
         app.post('/chime', parseJson, (request, response) =>{
-            // intent will always come in however you set it up on dialogue flow
-            // const intent = req.body.queryResult.intent.displayName;
-            // params will be passed in here
-            // const request = req.body.queryResult;
-
-            // console.log(request);
-            // console.log(intent);
-
             fulfillment.dialogflowFirebaseFulFillment(request, response);
-
-            // determineIntent.switch(intent, req, res);
         });
     }
 };

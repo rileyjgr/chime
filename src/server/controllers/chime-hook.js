@@ -1,6 +1,6 @@
-const Feedback = require('../models/feedback');
 const Event = require('../models/event');
 const User = require('../models/user');
+const Feedback = require('../models/feedback');
 
 module.exports = {
     hello: async(agent)=>{
@@ -14,5 +14,8 @@ module.exports = {
     },
     getInfo: async(agent)=>{
         agent.add('get info hit');
+    },
+    weather: async(agent)=>{
+        agent.add('weather hit.');
     }
 };
