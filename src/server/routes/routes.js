@@ -18,7 +18,6 @@ module.exports ={
         app.get('/chime', (req, res)=>{
             res.send('hello from chime')
         });
-
         app.post('/chime', parseJson, (request, response) =>{
             fulfillment.dialogflowFirebaseFulFillment(request, response);
         });
