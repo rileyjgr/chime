@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import MapGL, {NavigationControl} from 'react-map-gl';
-import dotenv from 'dotenv';
 
-superAgent.get()
 const TOKEN = process.env.MAPBOX_TOKEN;
 const navStyle = {
   position: 'absolute',
