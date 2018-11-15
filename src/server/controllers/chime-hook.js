@@ -1,17 +1,47 @@
 const Event = require('../models/event');
 const User = require('../models/user');
 const Feedback = require('../models/feedback');
-
+const googleapis = require('./google-apis')
 module.exports = {
     
     hello: async(agent)=>{
-        agent.add('Hello THERE WE WORK BUDDY.')
+        agent.add('Hello.')
     },
-    
+    // Create Event Intent
     event: async(agent)=>{
         // this is how you get parameters
         console.log(agent.parameters);
+
+        const user = agent.userId;
+        const foundUser = await User.findOne({user});
+
+        switch(foundUser){
+            case true:
+                console.log(foundUser);
+                break;
+            case false:
+                const token = await googleapis.getToken(user);
+
+                const newUser = new User({user, token});
+                await newUser.save();
+                
+        }
+        if (foundUser){
+            console.log(foundUser.token);
+
+
+        } else {
+                
+
+           
+        }
+
         agent.add('events hit');
+    },
+
+    // Get Calendar Info
+    getInfo: async(agent)=>{
+        agent.add('get info hit');
     },
     
     feedback: async(agent)=>{
@@ -20,10 +50,6 @@ module.exports = {
         await newFeedback.save();
 
         agent.add('Thank you for your feedback, your feedback request was:' + newFeedback + 'this was sent to your supervisor anonymously');
-    },
-    
-    getInfo: async(agent)=>{
-        agent.add('get info hit');
     },
     
     weather: async(agent)=>{
