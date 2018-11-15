@@ -18,25 +18,16 @@ module.exports = {
         switch(foundUser){
             case true:
                 console.log(foundUser);
+                agent.add('user found, events hit')
                 break;
             case false:
-                const token = await googleapis.getToken(user);
+                // const token = await googleapis.getToken(user);
 
-                const newUser = new User({user, token});
-                await newUser.save();
-                
+                // const newUser = new User({user, token});
+                // await newUser.save();
+                agent.add('no user found, events hit')
         }
-        if (foundUser){
-            console.log(foundUser.token);
-
-
-        } else {
-                
-
-           
-        }
-
-        agent.add('events hit');
+        
     },
 
     // Get Calendar Info
