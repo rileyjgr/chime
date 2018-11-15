@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import MapGL, {NavigationControl} from 'react-map-gl';
+import ReactMapGL from 'react-map-gl';
 
-const TOKEN = process.env.MAPBOX_TOKEN;
+const TOKEN = process.env.MAPBOX_ACCESS_TOKEN;
+const STYLE = "mapbox://styles/mapbox/light-v9";
+
 const navStyle = {
   position: 'absolute',
   top: 0,
@@ -10,31 +12,29 @@ const navStyle = {
 };
 
 export default class Map extends Component {
-constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       viewport: {
-        latitude: -93.685,
-        longitude: -100,
-        zoom: 2.8,
-        bearing: 0,
-        pitch: 0,
-        width: 500,
-        height: 500,
+        width: window.innerWidth,
+        height: 600,
+        latitude: 40.75,
+        longitude: -74,
+        zoom: 7
       }
     };
   }
-render() {
-    const {viewport} = this.state;
-return (
-      <MapGL
-        {...viewport}
-        mapStyle="mapbox://styles/mapbox/dark-v9"
-        mapboxApiAccessToken={TOKEN}>
-        <div className="nav" style={navStyle}>
-          <NavigationControl/>
-        </div>
-      </MapGL>
+
+  render() {
+    return (
+      <div className="reactmapgl">
+      <ReactMapGL 
+        mapboxApiAccessToken={TOKEN}
+        mapStyle={STYLE}
+        {...this.state.viewport}
+        onViewportChange={(viewport) => this.setState({viewport})}
+      />
+      </div>
     );
   }
 }
