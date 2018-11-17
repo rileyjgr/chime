@@ -1,0 +1,42 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+form {
+    display:flex;
+}
+
+.stage {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.wrapper {
+    display: table;
+    height: 790px; width: 100%;
+}
+
+.tabled, .middled {
+    text-align: -webkit-auto;
+    margin: 0 auto;
+}
+
+#intro {
+    background-size: 100% 100%;
+    background-color: gray;
+}
+
+#about {
+    background-size: 100% 100%;
+    background-color: blue;
+}
+
+#skills {
+    background-size: 100% 100%;
+    background-color: purple;
+}
+
+#map {
+    background-size: 100% 100%;
+}
