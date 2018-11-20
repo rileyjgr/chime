@@ -38,6 +38,7 @@ form {
     background-color: purple;
 }
 
-#map {
-    background-size: 100% 100%;
+.overlays {
+    width: 100%;
 }
+

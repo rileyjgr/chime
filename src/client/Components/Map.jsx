@@ -11,8 +11,8 @@ export default class Map extends Component {
     super(props);
     this.state = {
       viewport: {
-        width: 1006,
         height: 600,
+        width: 1106,
         latitude: 40.75,
         longitude: -74,
         zoom: 7
@@ -22,7 +22,7 @@ export default class Map extends Component {
 
   render() {
     return (
-      <div className="reactmapgl">
+      <div className="reactmapgl" style={{right: 10, left: 10}}>
       <ReactMapGL 
         mapboxApiAccessToken={TOKEN}
         mapStyle={STYLE}
