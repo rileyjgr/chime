@@ -118,6 +118,8 @@ typings/
 # CMake
 cmake-build-*/
 
+dist/bundle.js
+
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
 
