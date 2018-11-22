@@ -120,6 +120,8 @@ cmake-build-*/
 
 dist/bundle.js
 
+bundle.js
+
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
 
