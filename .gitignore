@@ -118,7 +118,7 @@ typings/
 # CMake
 cmake-build-*/
 
-dist/bundle.js
+src/dist/bundle.js
 
 bundle.js
 
