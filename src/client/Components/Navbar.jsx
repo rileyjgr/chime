@@ -12,7 +12,6 @@ class NavBar extends Component {
                 <Navbar.Brand>
                 <a href="https://www.slack.com">Chime</a>
                 </Navbar.Brand>
-                <Navbar.Toggle />
             </Navbar.Header>
                 <Nav>
                     <Navbar.Brand>
@@ -26,7 +25,7 @@ class NavBar extends Component {
                 </Nav>
                 <Nav pullRight>
                     <Navbar.Brand>
-                        <Link to="/signup">Register</Link>
+                        <Link to="/Signup">Register</Link>
                     </Navbar.Brand>
                 </Nav>
         </Navbar>

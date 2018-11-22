@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, FormGroup, FormControl, ControlLabel, Jumbotron, Nav, NavItem, Row } from "react-bootstrap";
-import Map from './Map';
+import HeatMap from './Map';
 import Navbar from './Navbar';
 import '../App.css';
 
@@ -28,7 +28,7 @@ class HomePage extends Component {
                 <div className="wrapper tabled">
                     <div className="stage" id="about">
                         <div className="middled">
-                            <Jumbotron><span className="text-center"><h1>About Us</h1></span></Jumbotron>
+                            <Jumbotron className='titles'><span className="text-center"><h1>About Us</h1></span></Jumbotron>
                             <ul>
                                 <li>A group of students at the Columbia x Trilogy coding bootcamp had a dream</li>
                                 <li>Companies were out of control, disorganized, and not hearing from their workforce</li>
@@ -42,7 +42,7 @@ class HomePage extends Component {
                 <div className="wrapper tabled">
                     <div className="stage" id="skills">
                         <div className="middled">
-                            <Jumbotron><span className="text-center"><h1>Chime Skills</h1></span></Jumbotron>
+                            <Jumbotron className='titles'><span className="text-center"><h1>Chime Skills</h1></span></Jumbotron>
                             <ul>
                                 <li>I can set a calendar for your company</li>
                                 <li>Want to hear about the weather for your work-week?</li>
@@ -54,10 +54,10 @@ class HomePage extends Component {
                 </div>
 
                 <div className="wrapper tabled">
-                    <div className="stage" id="map">
+                    <div className="stage" id="HeatMap">
                         <div className="middled">
-                        <Jumbotron><span className="text-center"><h1>Where are people Chiming in?</h1></span></Jumbotron>
-                            <Map />
+                        <Jumbotron className='titlesMap'><span className="text-center"><h1>Where are people Chiming in?</h1></span></Jumbotron>
+                            <HeatMap />
                         </div>
                     </div>
                 </div>
