@@ -2,6 +2,7 @@ const path = require('path');
 const srcDir = path.join(__dirname, '/src/client');
 const distDir = path.join(__dirname, '/src/dist');
 const webpack = require('webpack');
+const dotenv = require('dotenv');
 
 module.exports = {
     entry: `${srcDir}/index.jsx`,
@@ -43,7 +44,8 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
-        })
+        }),
+        new webpack.DefinePlugin(envKeys)
     ]
 };
 

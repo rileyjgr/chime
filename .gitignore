@@ -182,6 +182,13 @@ fabric.properties
 # .idea/*.iml
 # .idea/modules
 
+src/dist/bundle.js
+src/dist/chime.jpg
+src/dist/index.html
+
+
+bundle.js
+dist/bundle.js
 # CMake
 
 # Mongo Explorer plugin
