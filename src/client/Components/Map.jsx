@@ -1,40 +1,31 @@
-import React, {Component} from 'react';
-import MapGL, {NavigationControl} from 'react-map-gl';
+import React, { Component } from 'react';
+import ReactMapboxGl from "react-mapbox-gl";
 
-const TOKEN = process.env.MAPBOX_TOKEN;
-const navStyle = {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  padding: '10px'
-};
+const TOKEN = process.env.MAPBOX_ACCESS_TOKEN;
 
-export default class Map extends Component {
-constructor(props) {
+const Map = ReactMapboxGl({
+  accessToken: TOKEN
+});
+
+export default class HeatMap extends Component {
+  constructor(props) {
     super(props);
     this.state = {
-      viewport: {
-        latitude: -93.685,
-        longitude: -100,
-        zoom: 2.8,
-        bearing: 0,
-        pitch: 0,
-        width: 500,
-        height: 500,
-      }
-    };
-  }
-render() {
-    const {viewport} = this.state;
-return (
-      <MapGL
-        {...viewport}
-        mapStyle="mapbox://styles/mapbox/dark-v9"
-        mapboxApiAccessToken={TOKEN}>
-        <div className="nav" style={navStyle}>
-          <NavigationControl/>
-        </div>
-      </MapGL>
+      center: [-74.0060, 40.7128]
+    }
+  };
+
+  render() {
+    return (
+      <Map
+        style= "mapbox://styles/mapbox/light-v9"
+        center={this.state.center}
+        containerStyle={{
+          height: "75vh",
+          width: "100vw"
+        }}
+      >
+      </Map>
     );
   }
 }

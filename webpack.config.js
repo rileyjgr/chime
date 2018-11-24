@@ -2,6 +2,15 @@ const path = require('path');
 const srcDir = path.join(__dirname, '/src/client');
 const distDir = path.join(__dirname, '/src/dist');
 const webpack = require('webpack');
+const dotenv = require('dotenv');
+
+const env = dotenv.config().parsed;
+
+const envKeys = Object.keys(env).reduce((prev, next) => {
+    prev[`process.env.${next}`] = JSON.stringify(env[next]);
+    return prev;
+}, {});
+
 
 module.exports = {
     entry: `${srcDir}/index.jsx`,
@@ -43,7 +52,8 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
-        })
+        }),
+        new webpack.DefinePlugin(envKeys)
     ]
 };
 

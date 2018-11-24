@@ -1,0 +1,95 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+form {
+    display:flex;
+    margin: 0 auto;
+    max-width: max-content;
+    padding-top: 2vh;
+}
+
+.form-control {
+    width: 50vw;
+    height: 5vh !important;
+}
+
+label {
+    padding-bottom: 2vh;
+}
+
+.stage {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.wrapper {
+    display: table;
+    height: 100vh; 
+    width: -webkit-fill-available;
+}
+
+.wrapper2 {
+    display: table;
+    height: 95vh; 
+    width: -webkit-fill-available;
+}
+
+.tabled, .middled {
+    text-align: -webkit-auto;
+    margin: 0 auto;
+}
+
+.registerTitle {
+    padding-top: 8vh;
+}
+
+#intro {
+    background-size: 100% 100%;
+    background-color: gray;
+}
+
+#signs {
+    background-size: 100% 100%;
+    background-color: whitesmoke;
+}
+
+#about {
+    background-size: 100% 100%;
+    background-color: rgb(111, 147, 201);;
+}
+
+#skills {
+    background-size: 100% 100%;
+    background-color: rgb(255, 204, 213);
+}
+
+.titles {
+    margin-top: -20%;
+}
+
+.titlesMap {
+    margin-bottom: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.overlays {
+    width: 100%;
+}
+
+#tooltip-bottom {
+    margin-top:20px;
+}
+.tip1{
+    margin-left:220px;
+}
+
+.tip2 {
+    margin-left:995px;
+
+}
+.badge{
+    margin-left:10px;
+}
