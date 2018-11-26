@@ -3,7 +3,7 @@ const User = require("../models/user");
 const Feedback = require("../models/feedback");
 const {google} = require("googleapis");
 const timeZone = "America/New_York";
-const timeZoneOffset = "-05:00"; 
+const timeZoneOffset = "-05:00"; fs
 
 require("dotenv").config();
 
@@ -12,7 +12,7 @@ module.exports = {
     hello: async(agent)=>{
         const req = JSON.stringify(agent.body);
         console.log("agent: " + agent);
-        agent.add("Hello.")
+        agent.add("Hello.");
     },
     // Create Event Intent
     event: async(agent)=>{
@@ -86,7 +86,7 @@ module.exports = {
                         {   
                             auth: serviceAccountAuth, 
                             calendarId: calendarId,
-                            resource: {summary: "Meeting",
+                            resource: {summary: "Meeting", // agent.params.event?
                             start: {dateTime: dateTimeStart},
                             end: {dateTime: dateTimeEnd}
                         }
@@ -115,6 +115,7 @@ module.exports = {
     feedback: async(agent)=>{
         const userFeedback = agent.parameters.feedback;
         const newFeedback = new Feedback({message: userFeedback});
+        
         await newFeedback.save();
 
         agent.add("Thank you for your feedback, your feedback request was:" + newFeedback + "this was sent to your supervisor anonymously");
