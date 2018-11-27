@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import axios from 'axios';
 
 
-class Tasks extends Component {
+class AnonFeedback extends Component {
   constructor() {
     super();
     this.state = {
-      feedback: [{ "_id": "5bea1d812f9ca0088cb3d335", "message": "i dont like jano", "__v": 0 }]
+      feedback: []
     }
   }
 
@@ -29,9 +29,14 @@ class Tasks extends Component {
       })
   }
   render() {
-    <div id="feedback">
+
+    console.log(this.state.feedback);
+    return (<div id="feedback">
       {this.state.feedback.map(feedback => <div><h5>{feedback.message}</h5>></div>)}
-    </div>
+    </div>)
+
+
+
 
   }
 }

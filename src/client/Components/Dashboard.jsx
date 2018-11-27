@@ -4,7 +4,7 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 import { Card } from "./Card";
 import { StatsCard } from "./StatsCard";
-import { AnonFeedback } from "./AnonFeedback";
+import AnonFeedback from "./AnonFeedback";
 import {
   dataPie,
   legendPie,
