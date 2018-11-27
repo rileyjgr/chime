@@ -25,6 +25,7 @@ label {
 
 .wrapper {
     display: table;
+    height: 790px; width: 100%;
     height: 100vh; 
     width: -webkit-fill-available;
 }
@@ -55,6 +56,11 @@ label {
     background-image: url("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/383690/ba42e43828c826da1099caff358423b555f47dbc.jpg");
 }
 
+#about {
+    background-size: 100% 100%;
+    background-color: blue;}
+
+    
 #signs {
     background-size: 100% 100%;
     background-color: whitesmoke;
@@ -68,6 +74,19 @@ label {
 
 #skills {
     background-size: 100% 100%;
+    background-color: purple;
+}
+
+#map {
+    background-size: 100% 100%;
+}
+
+#tooltip-bottom {
+
+    margin-top:20px;
+}
+.tip1{
+
     background-color: rgb(255, 204, 213);
     background-image: url("https://fcit.usf.edu/matrix/wp-content/uploads/2016/12/BotBackground-14-B.jpg")
 }
@@ -107,34 +126,12 @@ label {
     margin-left:10px;
 }
 
-input[type=file] {
-    margin: auto;
+.dash{
+    margin-top:20px;
+    margin-bottom:20px;
 }
+.dashboard1{
 
-
-
-/* Pre-loader css styling */
-
-.loader:empty {
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid blue;
-    border-right: 16px solid green;
-    border-bottom: 16px solid red;
-    width: 120px;
-    height: 120px;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-    margin: auto;
-    margin-top: 25%;
-}
-  
-@-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-}
-  
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    background-color:#0033cc;
+   
 }

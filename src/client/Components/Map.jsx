@@ -57,7 +57,7 @@ export default class HeatMap extends Component {
   render() {
     return (
       <Map
-        style= "mapbox://styles/mapbox/light-v9"
+        style="mapbox://styles/mapbox/light-v9"
         center={this.state.center}
         containerStyle={{
           height: "75vh",
