@@ -1,0 +1,140 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+form {
+    margin: 0 auto;
+    max-width: max-content;
+    padding-top: 2vh;
+}
+
+.form-control {
+    width: 50vw;
+    height: 5vh !important;
+}
+
+label {
+    padding-bottom: 2vh;
+}
+
+.stage {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.wrapper {
+    display: table;
+    height: 100vh; 
+    width: -webkit-fill-available;
+}
+
+.wrapper2 {
+    display: table;
+    height: 95vh; 
+    width: -webkit-fill-available;
+}
+
+.tabled, .middled {
+    text-align: -webkit-auto;
+    margin: 0 auto;
+}
+
+.registerTitle {
+    padding-top: 8vh;
+}
+
+#licenseBackground {
+    background-size: 100% 100%;
+    background-color: gray;
+}
+
+#intro {
+    background-size: 100% 100%;
+    background-color: gray;
+    background-image: url("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/383690/ba42e43828c826da1099caff358423b555f47dbc.jpg");
+}
+
+#signs {
+    background-size: 100% 100%;
+    background-color: whitesmoke;
+}
+
+#about {
+    background-size: 100% 100%;
+    background-color: rgb(111, 147, 201);
+    background-image: url("http://www.fecr.com/wp-content/uploads/2014/07/New-York-City-background.jpg");
+}
+
+#skills {
+    background-size: 100% 100%;
+    background-color: rgb(255, 204, 213);
+    background-image: url("https://fcit.usf.edu/matrix/wp-content/uploads/2016/12/BotBackground-14-B.jpg")
+}
+
+.titles {
+    margin-top: -20%;
+}
+
+.titlesSkills {
+    margin-top: -20%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.titlesMap {
+    margin-bottom: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.overlays {
+    width: 100%;
+}
+
+#tooltip-bottom {
+    margin-top:20px;
+}
+.tip1{
+    margin-left:220px;
+}
+
+.tip2 {
+    margin-left:995px;
+
+}
+.badge{
+    margin-left:10px;
+}
+
+input[type=file] {
+    margin: auto;
+}
+
+
+
+/* Pre-loader css styling */
+
+.loader:empty {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-right: 16px solid green;
+    border-bottom: 16px solid red;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: auto;
+    margin-top: 25%;
+}
+  
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
