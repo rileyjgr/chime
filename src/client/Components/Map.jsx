@@ -3,7 +3,7 @@ import ReactMapboxGl, {Layer, Feature} from "react-mapbox-gl";
 
 // tslint:disable-next-line:no-var-requires
 const TOKEN = "pk.eyJ1IjoiY2hyaXN0aWFudGF2IiwiYSI6ImNqb2JvNXNzNjBkNTAzcW92ZzdjeG9pc2cifQ.Z2_g9u8RmV7cR91dUGeFUA";
-
+const data = require('../../server/controllers/google-apis/heatMapData.json');
 const Map = ReactMapboxGl({
   accessToken: TOKEN
 });
