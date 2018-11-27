@@ -4,7 +4,7 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 import { Card } from "./Card";
 import { StatsCard } from "./StatsCard";
-import { Tasks } from "./Tasks";
+import { AnonFeedback } from "./AnonFeedback";
 import {
   dataPie,
   legendPie,
@@ -151,7 +151,7 @@ class Dashboard extends Component {
                 content={
                   <div className="table-full-width">
                     <table className="table">
-                      <Tasks />
+                      <AnonFeedback />
                     </table>
                   </div>
                 }
