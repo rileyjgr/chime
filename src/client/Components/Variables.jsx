@@ -504,7 +504,7 @@ var optionsSales = {
   low: 0,
   high: 800,
   showArea: false,
-  height: "245px",
+  height: "358px",
   axisX: {
     showGrid: false
   },
@@ -521,7 +521,7 @@ var responsiveSales = [
     "screen and (max-width: 640px)",
     {
       axisX: {
-        labelInterpolationFnc: function(value) {
+        labelInterpolationFnc: function (value) {
           return value[0];
         }
       }
@@ -559,7 +559,7 @@ var optionsBar = {
   axisX: {
     showGrid: false
   },
-  height: "245px"
+  height: "374px"
 };
 var responsiveBar = [
   [
@@ -567,7 +567,7 @@ var responsiveBar = [
     {
       seriesBarDistance: 5,
       axisX: {
-        labelInterpolationFnc: function(value) {
+        labelInterpolationFnc: function (value) {
           return value[0];
         }
       }
