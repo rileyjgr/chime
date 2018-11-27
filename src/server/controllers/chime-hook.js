@@ -3,7 +3,7 @@ const User = require("../models/user");
 const Feedback = require("../models/feedback");
 const {google} = require("googleapis");
 const timeZone = "America/New_York";
-const timeZoneOffset = "-05:00"; fs
+const timeZoneOffset = "-05:00"; 
 
 require("dotenv").config();
 
