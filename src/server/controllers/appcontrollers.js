@@ -1,5 +1,5 @@
 const Feedback = require('../models/feedback');
-const User = require('../models/users');
+const User = require('../models/user');
 
 module.exports = {
     feedback: async(req, res)=>{
