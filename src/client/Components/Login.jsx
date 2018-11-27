@@ -34,8 +34,10 @@ export default class Login extends Component {
       <div className="wrapper tabled">
         <div className="stage" id="signs">
             <div className="signInForms">
+            <h2 className="text-center registerTitle"><strong>Login to your company dashboard</strong></h2><br/>
                 <div className="Login">
                     <form onSubmit={this.handleSubmit}>
+                      <div>
                         <FormGroup controlId="email" bsSize="large">
                             <ControlLabel>Email</ControlLabel>
                             <FormControl
@@ -45,9 +47,9 @@ export default class Login extends Component {
                             onChange={this.handleChange}
                             />
                         </FormGroup>
-                    </form>
+                      </div>
 
-                    <form onSubmit={this.handleSubmit}>
+                    <div>
                         <FormGroup controlId="password" bsSize="large">
                             <ControlLabel>Password</ControlLabel>
                             <FormControl
@@ -56,9 +58,9 @@ export default class Login extends Component {
                             type="password"
                             />
                         </FormGroup>
-                    </form>
+                    </div>
 
-                    <form onSubmit={this.handleSubmit}>
+                    <div>
                         <Button
                             block
                             bsSize="medium"
@@ -68,7 +70,8 @@ export default class Login extends Component {
                         >
                             Login
                         </Button>
-                    </form>
+                    </div>
+                  </form>
                 </div>
             </div>
         </div>

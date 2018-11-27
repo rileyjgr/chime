@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, FormGroup, FormControl, ControlLabel, Jumbotron } from "react-bootstrap";
 import Navbar from './Navbar';
+import '../App.css';
 
 class Signup extends Component {
     constructor(props) {
@@ -62,120 +63,123 @@ class Signup extends Component {
             <div className="wrapper tabled">
                 <div className="stage" id="signs">
                     <div className="signInForms">
-                        <h2 className="text-center registerTitle"><strong>Register your company's Chime channel here!</strong></h2><br/>
+                        <h2 className="text-center registerTitle"><strong>Register your Chime channel here!</strong></h2><br/>
                         <form className="text-center">
-                            <FormGroup
-                            controlId="email"
-                            validationState={this.getValidationState()}
-                            >
-                            <ControlLabel>Team Email</ControlLabel>
-                            <FormControl
-                                text="Email Address" 
-                                ref="email"
-                                name="email"
-                                type="text"
-                                placeholder="Email Address"
-                                defaultValue={this.state.email} 
-                                validate={this.validateEmail}
-                                value={this.state.email}
-                                onChange={this.onChange} 
-                                onSubmit={this.handleSubmit}
-                                errorMessage="Email is invalid"
-                                emptyMessage="Email can't be empty"
-                                errorVisible={this.state.showEmailError}
-                            />
-                            <FormControl.Feedback />
-                            </FormGroup>
-                        </form>
+                            <div>
+                                <FormGroup
+                                controlId="email"
+                                validationState={this.getValidationState()}
+                                >
+                                <ControlLabel>Team Email</ControlLabel>
+                                <FormControl
+                                    text="Email Address" 
+                                    ref="email"
+                                    name="email"
+                                    type="text"
+                                    placeholder="Email Address"
+                                    defaultValue={this.state.email} 
+                                    validate={this.validateEmail}
+                                    value={this.state.email}
+                                    onChange={this.onChange} 
+                                    onSubmit={this.handleSubmit}
+                                    errorMessage="Email is invalid"
+                                    emptyMessage="Email can't be empty"
+                                    errorVisible={this.state.showEmailError}
+                                />
+                                <FormControl.Feedback />
+                                </FormGroup>
+                            </div>
 
-                        <form className="text-center">
-                            <FormGroup
-                            controlId="company"
-                            >
-                            <ControlLabel>Company Name</ControlLabel>
-                            <FormControl
-                                text="Team Name" 
-                                ref="teamName"
-                                name="team"
-                                placeholder="Team Name"
-                                validate={this.validateTeamName}
-                                value={this.state.team}
-                                onChange={this.onChange} 
-                                onSubmit={this.handleSubmit}
-                                emptyMessage="Team Name can't be empty"
-                            />
-                            <FormControl.Feedback />
-                            </FormGroup>
-                        </form>
+                            <div>
+                                <FormGroup
+                                controlId="company"
+                                >
+                                <ControlLabel>Company Name</ControlLabel>
+                                <FormControl
+                                    text="Team Name" 
+                                    ref="teamName"
+                                    name="team"
+                                    placeholder="Team Name"
+                                    validate={this.validateTeamName}
+                                    value={this.state.team}
+                                    onChange={this.onChange} 
+                                    onSubmit={this.handleSubmit}
+                                    emptyMessage="Team Name can't be empty"
+                                />
+                                <FormControl.Feedback />
+                                </FormGroup>
+                            </div>
 
-                        <form className="text-center">
-                            <FormGroup
-                            controlId="password"
-                            >
-                            <ControlLabel>Enter Password</ControlLabel>
-                            <FormControl
-                                text="Team Name" 
-                                ref="password1"
-                                type="password"
-                                name="password1"
-                                placeholder="Password"
-                                validate={this.validatePassword1}
-                                value={this.state.password1}
-                                onChange={this.onChange} 
-                                onSubmit={this.handleSubmit}
-                                emptyMessage="Password can't be empty"
-                            />
-                            <FormControl.Feedback />
-                            </FormGroup>
-                        </form>
+                            <div>
+                                <FormGroup
+                                controlId="password"
+                                >
+                                <ControlLabel>Enter Password</ControlLabel>
+                                <FormControl
+                                    text="Team Name" 
+                                    ref="password1"
+                                    type="password"
+                                    name="password1"
+                                    placeholder="Password"
+                                    validate={this.validatePassword1}
+                                    value={this.state.password1}
+                                    onChange={this.onChange} 
+                                    onSubmit={this.handleSubmit}
+                                    emptyMessage="Password can't be empty"
+                                />
+                                <FormControl.Feedback />
+                                </FormGroup>
+                            </div>
 
-                        <form className="text-center">
-                            <FormGroup
-                            controlId="password2"
-                            >
-                            <ControlLabel>Confirm Password</ControlLabel>
-                            <FormControl
-                                text="Confirm Password" 
-                                ref="password2"
-                                type="password"
-                                name="password2"
-                                placeholder="Confirm"
-                                validate={this.validatePassword2}
-                                value={this.state.password2}
-                                onChange={this.onChange} 
-                                onSubmit={this.handleSubmit}
-                                emptyMessage="Password confirmation can't be empty"
-                            />
-                            <FormControl.Feedback />
-                            </FormGroup>
-                        </form>
+                            <div>
+                                <FormGroup
+                                controlId="password2"
+                                >
+                                <ControlLabel>Confirm Password</ControlLabel>
+                                <FormControl
+                                    text="Confirm Password" 
+                                    ref="password2"
+                                    type="password"
+                                    name="password2"
+                                    placeholder="Confirm"
+                                    validate={this.validatePassword2}
+                                    value={this.state.password2}
+                                    onChange={this.onChange} 
+                                    onSubmit={this.handleSubmit}
+                                    emptyMessage="Password confirmation can't be empty"
+                                />
+                                <FormControl.Feedback />
+                                </FormGroup>
+                            </div>
 
-                        <form className="text-center">
-                            <FormGroup
-                            controlId="logo"
-                            >
-                            <ControlLabel>Logo</ControlLabel>
-                            <FormControl
-                                text="Logo" 
-                                ref="logo"
-                                name="email"
-                                type="file"
-                                placeholder="File"
-                                defaultValue={this.state.logo} 
-                                validate={this.validateLogo}
-                                value={this.state.logo}
-                                onChange={this.onChange} 
-                                onSubmit={this.handleSubmit}
-                                errorMessage="Logo is empty"
-                                emptyMessage="Logo can't be empty"
-                                errorVisible={this.state.showLogoError}
-                            />
-                            <FormControl.Feedback />
-                            </FormGroup>
-                        </form>
-                        
-                        <form>
-                            <Button bsStyle="primary">Register</Button>
+                            <div>
+                                <FormGroup
+                                controlId="logo"
+                                >
+                                <br/>
+                                <ControlLabel>Logo</ControlLabel>
+                                <FormControl
+                                    text="Logo" 
+                                    ref="logo"
+                                    name="email"
+                                    type="file"
+                                    placeholder="File"
+                                    defaultValue={this.state.logo} 
+                                    validate={this.validateLogo}
+                                    value={this.state.logo}
+                                    onChange={this.onChange} 
+                                    onSubmit={this.handleSubmit}
+                                    errorMessage="Logo is empty"
+                                    emptyMessage="Logo can't be empty"
+                                    errorVisible={this.state.showLogoError}
+                                />
+                                <FormControl.Feedback />
+                                </FormGroup>
+                            </div>
+                            <br/>
+                            <div>
+                                <Button bsStyle="primary">Register</Button>
+                            </div>
                         </form>
                     </div>
                 </div>

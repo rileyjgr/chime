@@ -7,7 +7,7 @@ export default class License extends Component {
             <div>
                 <Navbar/>
                 <div className="wrapper tabled">
-                    <div className="stage" id="intro">
+                    <div className="stage" id="licenseBackground">
                         <div className="middled">
                             <div id="license">
                                 <div id="slack">
