@@ -1,21 +1,18 @@
-const Event = require("../models/event");
-const User = require("../models/user");
-const Feedback = require("../models/feedback");
-const {google} = require("googleapis");
-const timeZone = "America/New_York";
-const timeZoneOffset = "-05:00"; 
-
-require("dotenv").config();
+const Event = require('../models/event');
+const User = require('../models/user');
+const Feedback = require('../models/feedback');
 
 module.exports = {
-    
     hello: async(agent)=>{
+        agent.add('Hello THERE WE WORK BUDDY.')
         const req = JSON.stringify(agent.body);
         console.log("agent: " + agent);
         agent.add("Hello.");
     },
-    // Create Event Intent
     event: async(agent)=>{
+        // this is how you get parameters
+        console.log(agent.parameters);
+        agent.add('events hit');
         const serviceAccount = {  
             "type": "service_account",
             "project_id": process.env.PROJECT_ID,
@@ -111,8 +108,11 @@ module.exports = {
     getInfo: async(agent)=>{
         agent.add("get info hit");
     },
-    
     feedback: async(agent)=>{
+        agent.add('feedback hit');
+    },
+    getInfo: async(agent)=>{
+        agent.add('get info hit');
         const userFeedback = agent.parameters.feedback;
         const newFeedback = new Feedback({message: userFeedback});
         
@@ -120,13 +120,7 @@ module.exports = {
 
         agent.add("Thank you for your feedback, your feedback request was:" + newFeedback + "this was sent to your supervisor anonymously");
     },
-    
     weather: async(agent)=>{
-        console.log(agent.parameters);
-        const {name, city, etc} = agent.parameters;
-
-        const weather = "";
-        agent.add(weather);
+        agent.add('weather hit.');
     }
-
 };

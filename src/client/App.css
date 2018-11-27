@@ -4,7 +4,6 @@ html, body {
 }
 
 form {
-    display:flex;
     margin: 0 auto;
     max-width: max-content;
     padding-top: 2vh;
@@ -46,9 +45,15 @@ label {
     padding-top: 8vh;
 }
 
+#licenseBackground {
+    background-size: 100% 100%;
+    background-color: gray;
+}
+
 #intro {
     background-size: 100% 100%;
     background-color: gray;
+    background-image: url("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/383690/ba42e43828c826da1099caff358423b555f47dbc.jpg");
 }
 
 #about {
@@ -63,7 +68,8 @@ label {
 
 #about {
     background-size: 100% 100%;
-    background-color: rgb(111, 147, 201);;
+    background-color: rgb(111, 147, 201);
+    background-image: url("http://www.fecr.com/wp-content/uploads/2014/07/New-York-City-background.jpg");
 }
 
 #skills {
@@ -82,10 +88,17 @@ label {
 .tip1{
 
     background-color: rgb(255, 204, 213);
+    background-image: url("https://fcit.usf.edu/matrix/wp-content/uploads/2016/12/BotBackground-14-B.jpg")
 }
 
 .titles {
     margin-top: -20%;
+}
+
+.titlesSkills {
+    margin-top: -20%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .titlesMap {
