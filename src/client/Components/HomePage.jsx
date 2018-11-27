@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, FormGroup, FieldGroup, PageHeader, FormControl, ControlLabel, Jumbotron, Nav, NavItem, Row } from "react-bootstrap";
 import HeatMap from './Map';
 import Navbar from './Navbar';
-// import '../App.css';
+import '../App.css';
 
 class HomePage extends Component {
     render() {

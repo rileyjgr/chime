@@ -2,11 +2,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const fulfillment = require('../controllers/dialogflowcontroller');
+const appcontrollers = require('../controllers/appcontrollers');
 
 require('dotenv');
 
 module.exports ={
     html: async(app)=>{
+        app.get('/api/feedback', (req, res)=> {
+            appcontrollers.feedback(req, res);
+        });
         app.use(express.static(`${__dirname}/../../dist`));
         app.use(express.static(`${__dirname}/../../dist/js/contact.js`));
         app.get('*', (req, res) => {
