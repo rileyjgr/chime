@@ -5,14 +5,22 @@ export default class License extends Component {
     render() {
         return (
             <div>
+<<<<<<< HEAD
                 <Navbar />
+=======
+                <Navbar/>
+>>>>>>> master
                 <div className="wrapper tabled">
                     <div className="stage" id="licenseBackground">
                         <div className="middled">
                             <div id="license">
                                 <div id="slack">
                                     As a team, Chime adheres to the Slack/Google API terms and agreement.
+<<<<<<< HEAD
                                     <br />
+=======
+                                    <br/>
+>>>>>>> master
                                     Slack-Business: In using the Slack API, developers must agree to respect our business as we respect yours. Every Application must behave in accordance with appropriate and accepted business conduct. As part of good business practices, Applications and developers are prohibited from:
                                     <ul>
                                         <li>Circumventing Slack’s intended limitations (including pricing, features and access structures). You may not use the Slack API to replicate or compete with core products or services offered by Slack</li>
@@ -22,7 +30,11 @@ export default class License extends Component {
                                         <li>Additionally we agree to their other use limitations, as are listed in their terms <a href="https://api.slack.com/developer-policy">HERE</a></li>
                                     </ul>
                                 </div>
+<<<<<<< HEAD
                                 <br /><br />
+=======
+                                <br/><br/>
+>>>>>>> master
                                 <div id="google">
                                     Google-Terms: In using Dialogflow, we adhere to all of Google terms as provided below.
                                     <ul>
@@ -37,6 +49,10 @@ export default class License extends Component {
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
         )
     }
+=======
+        )}
+>>>>>>> master
 }
