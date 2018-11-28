@@ -135,6 +135,7 @@ module.exports = {
 
         getWeather = (z) =>  {
             const weatherURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + z + ",us&APPID=" + process.env.OPENWEATHER_ACCESS_TOKEN;
+            console.log(weatherURL);
             return Axios(weatherURL);
         };
         const toFarenheit = kelvin => {
@@ -160,11 +161,13 @@ module.exports = {
         
         getNews = c => {
             const newsURL = "https://newsapi.org/v2/top-headlines?q=" + c + "&category=business&apiKey=" + process.env.NEWS_ACCESS_TOKEN;
+            console.log(newsURL);
             return Axios(newsURL);
         }
 
         getStock = s => {
             const stockURL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + s + "&outputsize=compact&apikey=" + process.env.ALPHA_ACCESS_TOKEN;
+            console.log(stockURL);
             return Axios(stockURL);
         }
 
