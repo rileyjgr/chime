@@ -25,10 +25,6 @@ label {
 
 .wrapper {
     display: table;
-<<<<<<< HEAD
-    height: 790px; width: 100%;
-=======
->>>>>>> master
     height: 100vh; 
     width: -webkit-fill-available;
 }
@@ -59,14 +55,6 @@ label {
     background-image: url("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/383690/ba42e43828c826da1099caff358423b555f47dbc.jpg");
 }
 
-<<<<<<< HEAD
-#about {
-    background-size: 100% 100%;
-    background-color: blue;}
-
-    
-=======
->>>>>>> master
 #signs {
     background-size: 100% 100%;
     background-color: whitesmoke;
@@ -80,22 +68,6 @@ label {
 
 #skills {
     background-size: 100% 100%;
-<<<<<<< HEAD
-    background-color: purple;
-}
-
-#map {
-    background-size: 100% 100%;
-}
-
-#tooltip-bottom {
-
-    margin-top:20px;
-}
-.tip1{
-
-=======
->>>>>>> master
     background-color: rgb(255, 204, 213);
     background-image: url("https://fcit.usf.edu/matrix/wp-content/uploads/2016/12/BotBackground-14-B.jpg")
 }
@@ -135,17 +107,6 @@ label {
     margin-left:10px;
 }
 
-<<<<<<< HEAD
-.dash{
-    margin-top:20px;
-    margin-bottom:20px;
-}
-.dashboard1{
-
-    background-color:#0033cc;
-   
-}
-=======
 input[type=file] {
     margin: auto;
 }
@@ -177,4 +138,3 @@ input[type=file] {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
->>>>>>> master
