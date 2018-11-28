@@ -74,7 +74,7 @@ label {
 
 #skills {
     background-size: 100% 100%;
-    background-color: purple;
+    background-image: url("https://www.analyticsinsight.net/wp-content/uploads/2018/06/AI-World.jpg")
 }
 
 #map {
@@ -131,7 +131,33 @@ label {
     margin-bottom:20px;
 }
 .dashboard1{
-
     background-color:#0033cc;
-   
 }
+
+input[type=file] {
+    margin: auto;
+}
+ /* Pre-loader css styling */
+ .loader:empty {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-right: 16px solid green;
+    border-bottom: 16px solid red;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: auto;
+    margin-top: 25%;
+}
+  
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 
