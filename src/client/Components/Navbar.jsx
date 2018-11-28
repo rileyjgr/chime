@@ -25,7 +25,7 @@ class NavBar extends Component {
                 </Nav>
                 <Nav pullRight>
                     <Navbar.Brand>
-                        <Link to="/Signup">{this.props.isLoggedIn ? 'Logout' : 'Register'}</Link>
+                        <Link to="/Signup">{this.props.isLoggedIn ? 'Dashboard' : 'Register'}</Link>
                     </Navbar.Brand>
                 </Nav>
         </Navbar>

@@ -1,6 +1,7 @@
 const Event = require('../models/event');
 const User = require('../models/user');
 const Feedback = require('../models/feedback');
+const Axios = require('axios');
 
 module.exports = {
     hello: async(agent)=>{
@@ -121,6 +122,26 @@ module.exports = {
         agent.add("Thank you for your feedback, your feedback request was:" + newFeedback + "this was sent to your supervisor anonymously");
     },
     weather: async(agent)=>{
-        agent.add('weather hit.');
-    }
-};
+
+        console.log(agent.parameters);
+
+        const zip = agent.parameters.zip;
+
+        getWeather = (z) =>  {
+            const weatherURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + z + ",us&APPID=" + process.env.OPENWEATHER_ACCESS_TOKEN;
+        
+            return Axios(weatherURL);
+        
+        };
+
+        const toFarenheit = kelvin => {
+            console.log(kelvin);
+            let temp = (kelvin - 273.15) * 9/5 + 32;
+            var result = parseInt(temp);
+            return result;
+        }
+        return getWeather(zip).then((data) => {
+        agent.add(`The weather by you is looking like ${toFarenheit(data.main.temp)} degrees and ${data.weather[0].main}`);
+        });
+    },
+}
