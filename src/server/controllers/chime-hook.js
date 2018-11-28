@@ -131,7 +131,7 @@ module.exports = {
 
         console.log(agent.parameters);
 
-        const zip = agent.parameters.zip;
+        const zip = agent.parameters.zip-code;
 
         getWeather = (z) =>  {
             const weatherURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + z + ",us&APPID=" + process.env.OPENWEATHER_ACCESS_TOKEN;
@@ -144,7 +144,35 @@ module.exports = {
             return result;
         }
         return getWeather(zip).then((data) => {
-        agent.add(`The weather by you is looking like ${toFarenheit(data.main.temp)} degrees and ${data.weather[0].main}`);
+        agent.add(`The weather by you is looking like ${toFarenheit(data.main.temp)} degrees and ${data.weather[0].main} today`);
+        });
+    },
+    News: async(agent)=>{
+
+        console.log(agent.parameters);
+
+        const company = agent.parameters.company;
+        const date = "Time Series (Daily)";
+        const open = "1. open";
+
+        
+        getNews = c => {
+            const newsURL = "https://newsapi.org/v2/top-headlines?q=" + c + "&category=business&apiKey=" + process.env.NEWS_ACCESS_TOKEN;
+            return Axios(newsURL);
+        }
+
+        getStock = s => {
+            const stockURL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + s + "&outputsize=compact&apikey=" + process.env.ALPHA_ACCESS_TOKEN;
+            return Axios(stockURL);
+        }
+
+        getUpdates = com => {
+            getNews(com);
+            getStock(com);
+        }
+
+        return getUpdates(company).then((data) => {
+            agent.add(`The headline of the day for ${company} is "${articles[0].description}". The stock opened the day @ ${data[1].date[0].open}`)
         });
     },
 }
