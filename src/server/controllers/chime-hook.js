@@ -177,7 +177,7 @@ module.exports = {
         }
 
         return getUpdates(company, ticker).then((data) => {
-            agent.add(`The headline of the day for ${company} is "${articles[0].description}". The stock ticker ${ticker} opened the day @ ${data[1].date[0].open}`)
+            agent.add(`The headline of the day for ${company} is "${data.articles[0].description}". The stock ticker ${ticker} opened the day @ ${data[1].date[0].open}`)
         });
     },
 }
