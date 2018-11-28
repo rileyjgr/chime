@@ -21,6 +21,7 @@ db.on("error", console.error.bind(console, "connection error:"));
 
 db.once('open', function(){
     routes.html(app);
+    routes.users(app);
     routes.chime(app);
     app.listen(port);
 });

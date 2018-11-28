@@ -1,7 +1,10 @@
 const Event = require('../models/event');
-const User = require('../models/user');
 const Feedback = require('../models/feedback');
 const Axios = require('axios');
+const {google} = require("googleapis");
+const timeZone = "America/New_York";
+const timeZoneOffset = "-05:00"; 
+require('dotenv').config();
 
 module.exports = {
     hello: async(agent)=>{
@@ -13,7 +16,6 @@ module.exports = {
     event: async(agent)=>{
         // this is how you get parameters
         console.log(agent.parameters);
-        agent.add('events hit');
         const serviceAccount = {  
             "type": "service_account",
             "project_id": process.env.PROJECT_ID,
@@ -110,7 +112,11 @@ module.exports = {
         agent.add("get info hit");
     },
     feedback: async(agent)=>{
-        agent.add('feedback hit');
+        const userFeedback = agent.parameters.feedback;
+        const newFeedback = new Feedback({message: userFeedback});
+        
+        await newFeedback.save();
+        agent.add("Thank you for your feedback, your feedback request was:" + newFeedback + "this was sent to your supervisor anonymously");
     },
     getInfo: async(agent)=>{
         agent.add('get info hit');
@@ -129,11 +135,8 @@ module.exports = {
 
         getWeather = (z) =>  {
             const weatherURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + z + ",us&APPID=" + process.env.OPENWEATHER_ACCESS_TOKEN;
-        
             return Axios(weatherURL);
-        
         };
-
         const toFarenheit = kelvin => {
             console.log(kelvin);
             let temp = (kelvin - 273.15) * 9/5 + 32;

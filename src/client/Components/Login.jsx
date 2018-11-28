@@ -29,54 +29,51 @@ export default class Login extends Component {
 
   render() {
     return (
-    <div>
-      <Navbar/>
-      <div className="wrapper tabled">
-        <div className="stage" id="signs">
+      <div>
+        <Navbar />
+        <div className="wrapper tabled">
+          <div className="stage" id="signs">
             <div className="signInForms">
-            <h2 className="text-center registerTitle"><strong>Login to your company dashboard</strong></h2><br/>
-                <div className="Login">
-                    <form onSubmit={this.handleSubmit}>
-                      <div>
-                        <FormGroup controlId="email" bsSize="large">
-                            <ControlLabel>Email</ControlLabel>
-                            <FormControl
-                            autoFocus
-                            type="email"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                            />
-                        </FormGroup>
-                      </div>
+              <div className="Login">
+                <form onSubmit={this.handleSubmit}>
+                  <FormGroup controlId="email" bsSize="large">
+                    <ControlLabel>Email</ControlLabel>
+                    <FormControl
+                      autoFocus
+                      type="email"
+                      value={this.state.email}
+                      onChange={this.handleChange}
+                    />
+                  </FormGroup>
+                </form>
 
-                    <div>
-                        <FormGroup controlId="password" bsSize="large">
-                            <ControlLabel>Password</ControlLabel>
-                            <FormControl
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            type="password"
-                            />
-                        </FormGroup>
-                    </div>
+                <form onSubmit={this.handleSubmit}>
+                  <FormGroup controlId="password" bsSize="large">
+                    <ControlLabel>Password</ControlLabel>
+                    <FormControl
+                      value={this.state.password}
+                      onChange={this.handleChange}
+                      type="password"
+                    />
+                  </FormGroup>
+                </form>
 
-                    <div>
-                        <Button
-                            block
-                            bsSize="medium"
-                            bsStyle="info"
-                            disabled={!this.validateForm()}
-                            type="submit"
-                        >
-                            Login
+                <form onSubmit={this.handleSubmit}>
+                  <Button
+                    block
+                    bsSize="medium"
+                    bsStyle="info"
+                    disabled={!this.validateForm()}
+                    type="submit"
+                  >
+                    Login
                         </Button>
-                    </div>
-                  </form>
-                </div>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 }

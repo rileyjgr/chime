@@ -7,6 +7,7 @@ const appcontrollers = require('../controllers/appcontrollers');
 require('dotenv');
 
 module.exports ={
+
     html: async(app)=>{
         app.get('/api/feedback', (req, res)=> {
             appcontrollers.feedback(req, res);
@@ -17,6 +18,23 @@ module.exports ={
             res.sendFile(path.join(`${__dirname}/../../dist/index.html`));
         });
     },
+    
+    users: async(app)=>{
+
+        app.use(bodyParser.urlencoded({ extended: false }));
+        app.use(bodyParser.json());
+
+        app.get('/users/login', (req, res)=>{
+            res.send('hello from users login');
+        })
+        app.get('/users/signup', (req,res)=>{
+            res.send('hello from users signup')
+        })
+        app.post('/users/login', appcontrollers.login);
+        
+        app.post('/users/signup', appcontrollers.signup);
+    },
+    
     chime: async(app)=>{
         const parseJson = bodyParser.json();
         app.get('/chime', (req, res)=>{
@@ -26,6 +44,5 @@ module.exports ={
             fulfillment.dialogflowFirebaseFulFillment(request, response);
         });
     }
+
 };
-
-
