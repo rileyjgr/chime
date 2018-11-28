@@ -42,7 +42,17 @@ class HomePage extends Component {
                 <div className="wrapper2 tabled">
                     <div className="stage" id="skills">
                         <div className="middled">
+<<<<<<< HEAD
+                            <Jumbotron className='titles'><span className="text-center"><h1>Chime Skills</h1></span></Jumbotron>
+                            <ul>
+                                <li>I can set a calendar for your company</li>
+                                <li>Want to hear about the weather for your work-week?</li>
+                                <li>Lets submit some feedback to HR!!</li>
+                                <li>Track employee engagement while you're at it</li>
+                            </ul>
+=======
                             <Jumbotron className='titlesSkills'><span className="text-center"><h1>Chime Skills</h1></span></Jumbotron>
+>>>>>>> master
                         </div>
                     </div>
                 </div>

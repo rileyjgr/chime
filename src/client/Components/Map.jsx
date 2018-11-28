@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import ReactMapboxGl, {Layer, Feature} from "react-mapbox-gl";
 
 // tslint:disable-next-line:no-var-requires
+<<<<<<< HEAD
+const TOKEN = "pk.eyJ1IjoiY2hyaXN0aWFudGF2IiwiYSI6ImNqb2JvNXNzNjBkNTAzcW92ZzdjeG9pc2cifQ.Z2_g9u8RmV7cR91dUGeFUA";
+const data = require('../../server/controllers/google-apis/heatMapData.json');
+=======
 const data = require('../../server/controllers/google-apis/heatMapData.json');
 const TOKEN = "pk.eyJ1IjoiY2hyaXN0aWFudGF2IiwiYSI6ImNqb2JvNXNzNjBkNTAzcW92ZzdjeG9pc2cifQ.Z2_g9u8RmV7cR91dUGeFUA";
 
+>>>>>>> master
 const Map = ReactMapboxGl({
   accessToken: TOKEN
 });
@@ -57,7 +62,11 @@ export default class HeatMap extends Component {
   render() {
     return (
       <Map
+<<<<<<< HEAD
+        style="mapbox://styles/mapbox/light-v9"
+=======
         style= "mapbox://styles/mapbox/light-v9"
+>>>>>>> master
         center={this.state.center}
         containerStyle={{
           height: "75vh",
