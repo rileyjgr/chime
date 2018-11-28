@@ -8,7 +8,6 @@ module.exports = {
     event: async(agent)=>{
         // this is how you get parameters
         console.log(agent.parameters);
-        agent.add('events hit');
         const serviceAccount = {  
             "type": "service_account",
             "project_id": process.env.PROJECT_ID,
