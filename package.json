@@ -43,7 +43,7 @@
     "lowdb": "^1.0.0",
     "mongoose": "^5.3.8",
     "newsapi": "^2.4.0",
-    "nodemon": "^1.18.4",
+    "nodemon": "^1.18.7",
     "path": "^0.12.7",
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
