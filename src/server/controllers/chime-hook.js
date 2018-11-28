@@ -152,6 +152,8 @@ module.exports = {
         console.log(agent.parameters);
 
         const company = agent.parameters.company;
+        const ticker = agent.parameters.ticker;
+
         const date = "Time Series (Daily)";
         const open = "1. open";
 
@@ -166,13 +168,13 @@ module.exports = {
             return Axios(stockURL);
         }
 
-        getUpdates = com => {
+        getUpdates = (com, tick) => {
             getNews(com);
-            getStock(com);
+            getStock(tick);
         }
 
-        return getUpdates(company).then((data) => {
-            agent.add(`The headline of the day for ${company} is "${articles[0].description}". The stock opened the day @ ${data[1].date[0].open}`)
+        return getUpdates(company, ticker).then((data) => {
+            agent.add(`The headline of the day for ${company} is "${articles[0].description}". The stock ticker ${ticker} opened the day @ ${data[1].date[0].open}`)
         });
     },
 }
