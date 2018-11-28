@@ -29,53 +29,6 @@ export default class Login extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div>
-        <Navbar />
-        <div className="wrapper tabled">
-          <div className="stage" id="signs">
-            <div className="signInForms">
-              <div className="Login">
-                <form onSubmit={this.handleSubmit}>
-                  <FormGroup controlId="email" bsSize="large">
-                    <ControlLabel>Email</ControlLabel>
-                    <FormControl
-                      autoFocus
-                      type="email"
-                      value={this.state.email}
-                      onChange={this.handleChange}
-                    />
-                  </FormGroup>
-                </form>
-
-                <form onSubmit={this.handleSubmit}>
-                  <FormGroup controlId="password" bsSize="large">
-                    <ControlLabel>Password</ControlLabel>
-                    <FormControl
-                      value={this.state.password}
-                      onChange={this.handleChange}
-                      type="password"
-                    />
-                  </FormGroup>
-                </form>
-
-                <form onSubmit={this.handleSubmit}>
-                  <Button
-                    block
-                    bsSize="medium"
-                    bsStyle="info"
-                    disabled={!this.validateForm()}
-                    type="submit"
-                  >
-                    Login
-                        </Button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-=======
     <div>
       <Navbar/>
       <div className="wrapper tabled">
@@ -124,7 +77,6 @@ export default class Login extends Component {
         </div>
       </div>
     </div>
->>>>>>> master
     );
   }
 }
