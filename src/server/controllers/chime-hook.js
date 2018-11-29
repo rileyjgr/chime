@@ -111,15 +111,6 @@ module.exports = {
         await newFeedback.save();
         agent.add("Thank you for your feedback, your feedback request was:" + newFeedback + "this was sent to your supervisor anonymously");
     },
-    getInfo: async(agent)=>{
-        agent.add('get info hit');
-        const userFeedback = agent.parameters.feedback;
-        const newFeedback = new Feedback({message: userFeedback});
-        
-        await newFeedback.save();
-
-        agent.add("Thank you for your feedback, your feedback request was:" + newFeedback + "this was sent to your supervisor anonymously");
-    },
     weather: async(agent)=>{
         agent.add('weather hit.');
     }
