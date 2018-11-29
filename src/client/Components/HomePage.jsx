@@ -53,6 +53,7 @@ class HomePage extends Component {
                                 <li>Lets submit some feedback to HR!!</li>
                                 <li>Track employee engagement while you're at it</li>
                             </ul>
+
                         </div>
                     </div>
                 </div>

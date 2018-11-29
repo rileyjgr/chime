@@ -1,4 +1,3 @@
-const Event = require('../models/event');
 const Feedback = require('../models/feedback');
 const Axios = require('axios');
 const {google} = require("googleapis");
@@ -8,12 +7,6 @@ const timeZoneOffset = "-05:00";
 require('dotenv').config();
 
 module.exports = {
-    hello: async(agent)=>{
-        agent.add('Hello THERE WE WORK BUDDY.')
-        const req = JSON.stringify(agent.body);
-        console.log("agent: " + agent);
-        agent.add("Hello.");
-    },
     event: async(agent)=>{
         // this is how you get parameters
         console.log(agent.parameters);
@@ -60,6 +53,7 @@ module.exports = {
         const getLocaleDateString= (dateObj)=> {
             return dateObj.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", timeZone: timeZone });
         }
+
         const appointmentDuration = 1;
         const dateTimeStart = convertParametersDate(date, time);
         const dateTimeEnd = addHours(dateTimeStart, 1);
@@ -117,15 +111,6 @@ module.exports = {
         const newFeedback = new Feedback({message: userFeedback});
         
         await newFeedback.save();
-        agent.add("Thank you for your feedback, your feedback request was:" + newFeedback + "this was sent to your supervisor anonymously");
-    },
-    getInfo: async(agent)=>{
-        agent.add('get info hit');
-        const userFeedback = agent.parameters.feedback;
-        const newFeedback = new Feedback({message: userFeedback});
-        
-        await newFeedback.save();
-
         agent.add("Thank you for your feedback, your feedback request was:" + newFeedback + "this was sent to your supervisor anonymously");
     },
     weather: async(agent)=>{

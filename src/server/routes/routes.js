@@ -36,11 +36,13 @@ module.exports ={
     },
     
     chime: async(app)=>{
-        const parseJson = bodyParser.json();
+        app.use(bodyParser.json());
+
         app.get('/chime', (req, res)=>{
             res.send('hello from chime')
         });
-        app.post('/chime', parseJson, (request, response) =>{
+        
+        app.post('/chime', (request, response) =>{
             fulfillment.dialogflowFirebaseFulFillment(request, response);
         });
     }

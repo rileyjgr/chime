@@ -9,7 +9,7 @@ import Signup from './Signup';
 class App extends Component {
     state = {
         loading: true
-    };
+      };
 
     componentDidMount() {
         // the setTimeout just simulates an async action, after which the component will render the content
@@ -18,9 +18,9 @@ class App extends Component {
 
     render() {
         const { loading } = this.state;
-
-        if (loading) { // if your component doesn't have to wait for an async action, remove this block 
-            return null; // render null when app is not ready
+    
+        if(loading) { // if your component doesn't have to wait for an async action, remove this block 
+          return null; // render null when app is not ready
         }
 
         return (
