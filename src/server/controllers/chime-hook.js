@@ -1,7 +1,9 @@
 const Feedback = require('../models/feedback');
+const Axios = require('axios');
 const {google} = require("googleapis");
 const timeZone = "America/New_York";
 const timeZoneOffset = "-05:00"; 
+
 require('dotenv').config();
 
 module.exports = {
@@ -112,6 +114,64 @@ module.exports = {
         agent.add("Thank you for your feedback, your feedback request was:" + newFeedback + "this was sent to your supervisor anonymously");
     },
     weather: async(agent)=>{
-        agent.add('weather hit.');
-    }
-};
+
+        console.log(agent.parameters);
+
+        const zip = agent.parameters.zip-code;
+
+        getWeather = (z) =>  {
+            const weatherURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + z + ",us&APPID=" + process.env.OPENWEATHER_ACCESS_TOKEN;
+            console.log(weatherURL);
+            return Axios(weatherURL);
+        };
+
+        const toFarenheit = kelvin => {
+            console.log(kelvin);
+            let temp = (kelvin - 273.15) * 9/5 + 32;
+            var result = parseInt(temp);
+            return result;
+        }
+        await getWeather(zip).then((data) => {
+        agent.add(`The weather by you is looking like ${toFarenheit(data.main.temp)} degrees and ${data.weather[0].main} today`);
+        });
+    },
+    News: async(agent)=>{
+
+        console.log(agent.parameters);
+
+        const company = agent.parameters.company;
+        const ticker = agent.parameters.ticker;
+        const date = agent.parameters.date;
+        
+        getNews = c => {
+            const newsURL = 'https://newsapi.org/v2/everything?language=en&domains=wsj.com,nytimes.com,businessinsider.com&q="' + c + '"&apiKey=' + process.env.NEWS_ACCESS_TOKEN;
+            console.log(newsURL);
+            return Axios.get(newsURL).then(response => {
+                return response.data;
+            });;
+        }
+
+        getStock = s => {
+            const stockURL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + s + "&outputsize=compact&apikey=" + process.env.ALPHA_ACCESS_TOKEN;
+            console.log(stockURL);
+            return Axios.get(stockURL).then(response => {
+                return response.data;
+            });
+        }
+
+        getUpdates = (com, tick) => {
+            return Promise.all([getNews(com), getStock(tick)])
+        }
+
+        return getUpdates(company, ticker).then((data) => {
+            console.log("$$$$$$$$$$$$ data array here", data);
+            var placement = data[1]['Time Series (Daily)'];
+            var stockplacer = Object.keys(placement)[0];
+            var stockprice = '1. open';
+
+            agent.add(`The headline of the day for ${company} is "${data[0].articles[0].description}". The stock ticker ${ticker} opened the this most recent trading day @ ${placement[stockplacer][stockprice]}`)
+        }).catch(() => {
+            agent.add(`Sorry, no news today. Is there anything else I can do for you?`);
+          });
+    },
+}
