@@ -98,7 +98,7 @@ class Dashboard extends Component {
                   <container style={{ height: "300px" }}>
                     <div style={{ height: "374px" }}>
 
-
+ {<img className="img3" src={require('../../dist/TechCrunch.jpg')} />}
                     </div>
                   </container>}
               />
