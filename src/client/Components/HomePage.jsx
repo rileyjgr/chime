@@ -17,7 +17,7 @@ class HomePage extends Component {
                                     <span className="text-center">
                                         <h1>Welcome to Chime</h1>
                                     </span> 
-                                    <div className="text-center inlined">
+                                    <div className="text-center">
                                         <Image src="http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-10/128/Bell-icon.png" rounded />
                                         <h3>Giving your workforce a voice</h3>
                                     </div>

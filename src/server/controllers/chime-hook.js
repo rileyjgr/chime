@@ -4,6 +4,7 @@ const Axios = require('axios');
 const {google} = require("googleapis");
 const timeZone = "America/New_York";
 const timeZoneOffset = "-05:00"; 
+
 require('dotenv').config();
 
 module.exports = {
@@ -138,13 +139,14 @@ module.exports = {
             console.log(weatherURL);
             return Axios(weatherURL);
         };
+
         const toFarenheit = kelvin => {
             console.log(kelvin);
             let temp = (kelvin - 273.15) * 9/5 + 32;
             var result = parseInt(temp);
             return result;
         }
-        return getWeather(zip).then((data) => {
+        await getWeather(zip).then((data) => {
         agent.add(`The weather by you is looking like ${toFarenheit(data.main.temp)} degrees and ${data.weather[0].main} today`);
         });
     },
@@ -154,30 +156,37 @@ module.exports = {
 
         const company = agent.parameters.company;
         const ticker = agent.parameters.ticker;
-
-        const date = "Time Series (Daily)";
-        const open = "1. open";
-
+        const date = agent.parameters.date;
         
         getNews = c => {
-            const newsURL = "https://newsapi.org/v2/top-headlines?q=" + c + "&category=business&apiKey=" + process.env.NEWS_ACCESS_TOKEN;
+            const newsURL = 'https://newsapi.org/v2/everything?language=en&domains=wsj.com,nytimes.com,businessinsider.com&q="' + c + '"&apiKey=' + process.env.NEWS_ACCESS_TOKEN;
             console.log(newsURL);
-            return Axios(newsURL);
+            return Axios.get(newsURL).then(response => {
+                return response.data;
+            });;
         }
 
         getStock = s => {
             const stockURL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + s + "&outputsize=compact&apikey=" + process.env.ALPHA_ACCESS_TOKEN;
             console.log(stockURL);
-            return Axios(stockURL);
+            return Axios.get(stockURL).then(response => {
+                return response.data;
+            });
         }
 
         getUpdates = (com, tick) => {
-            getNews(com);
-            getStock(tick);
+            return Promise.all([getNews(com), getStock(tick)])
         }
 
         return getUpdates(company, ticker).then((data) => {
-            agent.add(`The headline of the day for ${company} is "${data.articles[0].description}". The stock ticker ${ticker} opened the day @ ${data[1].date[0].open}`)
-        });
+            console.log("$$$$$$$$$$$$ data array here", data);
+            var placement = data[1]['Time Series (Daily)'];
+            var stockplacer = Object.keys(placement)[0];
+            var stockprice = '1. open';
+
+            agent.add(`The headline of the day for ${company} is "${data[0].articles[0].description}". The stock ticker ${ticker} opened the this most recent trading day @ ${placement[stockplacer][stockprice]}`)
+        }).catch(() => {
+            agent.add(`Sorry, no news today. Is there anything else I can do for you?`);
+          });
     },
 }
