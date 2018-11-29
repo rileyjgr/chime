@@ -9,6 +9,8 @@ form {
     padding-top: 2vh;
 }
 
+
+
 .form-control {
     width: 50vw;
     height: 5vh !important;
@@ -146,10 +148,19 @@ label {
 }
 
 .img{
-    width:90px;
-    height:90px;
+    width:70px;
+    height:70px;
     margin-left:5px;
     margin-top:5px;
+    margin-bottom:10px;
+}
+.updates{
+    width:80px;
+    height:80px;
+    margin-left:5px;
+    margin-top:5px;
+   
+
 }
 
 .text-myDangerColor {

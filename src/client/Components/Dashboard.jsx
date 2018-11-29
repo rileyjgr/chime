@@ -54,7 +54,7 @@ class Dashboard extends Component {
             </Col>
             <Col lg={3} sm={6}>
               <StatsCard
-                bigIcon={<img className="img" src={require('../../dist/artificialintelligence.jpg')} />}
+                bigIcon={<img className="updates" src={require('../../dist/artificialintelligence.jpg')} />}
                 statsText="Updates"
                 statsValue="27"
                 statsIcon={<i className="fas fa-clock-o" />}
