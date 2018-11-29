@@ -1,8 +1,3 @@
-//
-// //
-// // // For notifications
-// //
-//
 var defaultWidth =
   window.screen.width > 768 ? window.screen.width * 1 / 3 : window.screen.width;
 
@@ -476,10 +471,11 @@ const iconsArray = [
 var dataPie = {
   labels: ["40%", "20%", "40%"],
   series: [40, 20, 40]
+
 };
 var legendPie = {
-  names: ["Open", "Bounce", "Unsubscribe"],
-  types: ["info", "danger", "warning"]
+  names: ["Open", "Bounced", "Unsubscribe"],
+  types: ["danger", "myDangerColor", "warning"]
 };
 
 // Data for Line Chart
@@ -497,14 +493,14 @@ var dataSales = {
   series: [
     [287, 385, 490, 492, 554, 586, 698, 695],
     [67, 152, 143, 240, 287, 335, 435, 437],
-    [23, 113, 67, 108, 190, 239, 307, 308]
+
   ]
 };
 var optionsSales = {
   low: 0,
   high: 800,
   showArea: false,
-  height: "358px",
+  height: "399px",
   axisX: {
     showGrid: false
   },
@@ -529,8 +525,8 @@ var responsiveSales = [
   ]
 ];
 var legendSales = {
-  names: ["Open", "Click", "Click Second Time"],
-  types: ["info", "danger", "warning"]
+  names: ["Google Home", "Slack"],
+  types: ["myDangerColor", "danger"]
 };
 
 // Data for Bar Chart
@@ -559,7 +555,7 @@ var optionsBar = {
   axisX: {
     showGrid: false
   },
-  height: "374px"
+  height: "383px"
 };
 var responsiveBar = [
   [
@@ -569,14 +565,18 @@ var responsiveBar = [
       axisX: {
         labelInterpolationFnc: function (value) {
           return value[0];
-        }
+        },
+
+
       }
     }
   ]
 ];
 var legendBar = {
-  names: ["Tesla Model S", "BMW 5 Series"],
-  types: ["info", "danger"]
+  names: ["Google Home", "Slack"],
+  types: ["myDangerColor", "danger"],
+
+
 };
 
 module.exports = {
@@ -595,3 +595,5 @@ module.exports = {
   responsiveBar,
   legendBar // For charts (Dashboard view)
 };
+
+

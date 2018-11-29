@@ -26,6 +26,7 @@
     "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-react-transform": "^3.0.0",
     "body-parser": "^1.18.3",
+    "chartist": "^0.11.0",
     "concurrently": "^4.0.1",
     "css-loader": "^1.0.1",
     "dialogflow-fulfillment": "^0.6.1",
@@ -62,6 +63,7 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "css-loader": "^1.0.1",
+    "file-loader": "^2.0.0",
     "style-loader": "^0.23.1",
     "webpack-cli": "^3.1.2"
   }
