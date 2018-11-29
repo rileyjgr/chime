@@ -132,6 +132,68 @@ label {
 }
 .dashboard1{
 
-    background-color:#0033cc;
-   
+    background-image: url("https://i.ytimg.com/vi/-MKapbz0GIo/maxresdefault.jpg");
+    font-family: 'Roboto Slab', serif;
+    margin-top:20px;
+    margin-bottom:20px;
 }
+.dash2 {
+
+    margin-top:100px;
+}
+.table2{
+    height:374px;
+}
+
+.img{
+    width:90px;
+    height:90px;
+    margin-left:5px;
+    margin-top:5px;
+}
+
+.text-myDangerColor {
+    color: #f05b4f;
+    margin-left:5px;
+    margin-right:5px;
+}
+.text-danger {
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+.text-warning {
+    margin-left:5px;
+    margin-right:5px;
+}
+p{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+h4{
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:10px;
+}
+
+.category{
+    margin-left:10px;
+}
+
+.stats{
+
+    margin-left:10px;
+    margin-bottom:10px;
+}
+
+.legend{
+
+    margin-left:5px;
+}
+
+.news{
+    height:360px;
+}
+

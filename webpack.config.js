@@ -12,8 +12,11 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.css']
     },
-    module : {
-        rules : [
+
+
+    module: {
+        rules: [
+
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader'
@@ -27,9 +30,9 @@ module.exports = {
                 loader: 'file-loader'
             },
             {
-                test : /\.jsx?/,
-                include : srcDir,
-                loader : 'babel-loader',
+                test: /\.jsx?/,
+                include: srcDir,
+                loader: 'babel-loader',
                 query: {
                     presets: ['@babel/react'],
                     plugins: ['@babel/plugin-proposal-class-properties']
