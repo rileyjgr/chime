@@ -11,14 +11,14 @@ class HomePage extends Component {
                 <div className="wrapper tabled">
                     <div className="stage" id="intro">
                         <div className="middled">
-                            <Navbar/>
+                            <Navbar />
                             <Jumbotron>
                                 <div>
                                     <span className="text-center"><h1>Welcome to Chime</h1>
-                                    <br/>
+                                        <br />
                                         <span className="text-center"><h3>Giving your workforce a voice</h3>
                                         </span>
-                                    </span> 
+                                    </span>
                                 </div>
                             </Jumbotron>
                         </div>
@@ -50,7 +50,7 @@ class HomePage extends Component {
                 <div className="wrapper2 tabled">
                     <div className="stage" id="HeatMap">
                         <div className="middled">
-                        <Jumbotron className='titlesMap'><span className="text-center"><h1>Where are people Chiming in?</h1></span></Jumbotron>
+                            <Jumbotron className='titlesMap'><span className="text-center"><h1>Where are people Chiming in?</h1></span></Jumbotron>
                             <HeatMap />
                         </div>
                     </div>

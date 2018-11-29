@@ -138,7 +138,13 @@ input[type=file] {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+.img3{
 
+    width:375px;
+    margin-left:50px;
+    margin-top:70px;
+
+}
 .dash{
     margin-top:20px;
     margin-bottom:20px;
