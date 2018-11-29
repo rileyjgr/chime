@@ -3,6 +3,7 @@
 const functions = require('firebase-functions');
 const {WebhookClient} = require('dialogflow-fulfillment');
 const chime = require('./chime-hook');
+const music = require('./galiboo-hook');
 
 require('dotenv').config();
 
@@ -15,6 +16,7 @@ exports.dialogflowFirebaseFulFillment = functions.https.onRequest((request, resp
     intentMap.set('Event', chime.event);
     intentMap.set('getPersonalInfo',chime.getInfo);
     intentMap.set('weather', chime.weather);
+    intentMap.set('Music', music.music);
     
     agent.handleRequest(intentMap);
 
