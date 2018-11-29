@@ -139,6 +139,15 @@ input[type=file] {
     100% { transform: rotate(360deg); }
 }
 
+.badge{
+    margin-left:10px;
+}
+
+input[type=file] {
+    margin: auto;
+}
+
+
 .dash{
     margin-top:20px;
     margin-bottom:20px;
