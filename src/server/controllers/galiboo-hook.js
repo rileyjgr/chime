@@ -3,19 +3,14 @@ require('dotenv').config();
 
 module.exports = {
     music: async(agent)=>{
-        console.log(agent.parameters.queries);
         const potentionalQuerys = [agent.parameters];
-        console.log(potentionalQuerys);
-        const getQuerys = (potentionalQuerys) => {
-
-
-
-        };
-        // const queries = agent.pareters.Queries;
         const token = '?token=' + process.env.GALIBOO_ACCESS_TOKEN;
         const query = '&q=' + potentionalQuerys;
 
+        // spotify ids 
         let spotify_ids_array = [];
+        
+        // urls array
         let songsArray = [];
         // call to galiboo to get spotify ids based on user inputs 
         await axios.get('http://secure.galiboo.com/api/discover/tracks/smart_search/'+ token + query)
