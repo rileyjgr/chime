@@ -20,11 +20,19 @@ We are currently in early stages, and only have limited amount of beta keys to g
 
 Google Apis, Music finder / recommendations, company news, Weather, anonmyous feedback, admin dashboard
 
-# Future Development
+# Tech Used
 
-- Google Calendar events
-- Anonymous feedback
-- User heat map
-- Company news updater (Daily bot messages, for company updates)
-- Weather
-- Social aspect, get updates your colleagues are eating lunch if you want to meet up or what they are working on. 
+DialogFlow, Googles API For A.I
+Google Cloud platform Apis:
+Google Calendar Api
+Cloud Functions Api
+Galiboo, API for A.I anylsis on music
+News API
+Open Weather Map
+
+# Stack Used
+
+MongoDb
+Express
+React / Bootstrap
+Node.js
