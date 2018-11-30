@@ -18,7 +18,7 @@ We are currently in early stages, and only have limited amount of beta keys to g
 
 # Current Support
 
-Chat bot features
+Google Apis, Music finder / recommendations, company news, Weather, anonmyous feedback, admin dashboard
 
 # Future Development
 
