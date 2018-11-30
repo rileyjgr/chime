@@ -8,6 +8,7 @@ The Company Assistant.
 |    Slack   |   Yes (beta)  |
 | GoogleHome | Alpha |
 | Call Support | Yes (+1 210-745-6179 temp number)|
+| Facebook messenger | Chime bot |
 
 Integrating chime into your company, will be simple and easy in the future. 
 
