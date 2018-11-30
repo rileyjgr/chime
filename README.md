@@ -22,13 +22,17 @@ Google Apis, Music finder / recommendations, company news, Weather, anonmyous fe
 
 # Tech Used
 
-DialogFlow, Googles API For A.I
+- DialogFlow, Googles API For A.I
+
 Google Cloud platform Apis:
-Google Calendar Api
-Cloud Functions Api
-Galiboo, API for A.I anylsis on music
-News API
-Open Weather Map
+- Google Calendar Api
+- Cloud Functions Api
+
+- Galiboo, API for A.I anylsis on music
+
+- News API
+
+- Open Weather Map
 
 # Stack Used
 
