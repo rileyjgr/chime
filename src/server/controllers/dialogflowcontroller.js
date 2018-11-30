@@ -16,7 +16,9 @@ exports.dialogflowFirebaseFulFillment = functions.https.onRequest((request, resp
     intentMap.set('Event', chime.event);
     intentMap.set('getPersonalInfo',chime.getInfo);
     intentMap.set('weather', chime.weather);
+    intentMap.set('News', chime.News);
     intentMap.set('Music', music.music);
+
     
     agent.handleRequest(intentMap);
 
