@@ -3,7 +3,9 @@ require('dotenv').config();
 
 module.exports = {
     music: async(agent)=>{
+
         const potentionalQuerys = [agent.parameters];
+        console.log(potentionalQuerys);
         const token = '?token=' + process.env.GALIBOO_ACCESS_TOKEN;
         const query = '&q=' + potentionalQuerys;
 
