@@ -4,12 +4,14 @@ const {google} = require("googleapis");
 const timeZone = "America/New_York";
 const timeZoneOffset = "-05:00"; 
 
+const axios = require('axios');
+
 require('dotenv').config();
 
 module.exports = {
     event: async(agent)=>{
         // this is how you get parameters
-        console.log(agent.parameters);
+
         const serviceAccount = {  
             "type": "service_account",
             "project_id": process.env.PROJECT_ID,
@@ -122,6 +124,7 @@ module.exports = {
         getWeather = (z) =>  {
             const weatherURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + z + ",us&APPID=" + process.env.OPENWEATHER_ACCESS_TOKEN;
             console.log(weatherURL);
+
             return Axios(weatherURL);
         };
 
@@ -146,7 +149,8 @@ module.exports = {
         getNews = c => {
             const newsURL = 'https://newsapi.org/v2/everything?language=en&domains=wsj.com,nytimes.com,businessinsider.com&q="' + c + '"&apiKey=' + process.env.NEWS_ACCESS_TOKEN;
             console.log(newsURL);
-            return Axios.get(newsURL).then(response => {
+            return axios.get(newsURL).then(response => {
+
                 return response.data;
             });;
         }
@@ -154,7 +158,9 @@ module.exports = {
         getStock = s => {
             const stockURL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + s + "&outputsize=compact&apikey=" + process.env.ALPHA_ACCESS_TOKEN;
             console.log(stockURL);
-            return Axios.get(stockURL).then(response => {
+          
+            return axios.get(stockURL).then(response => {
+
                 return response.data;
             });
         }
@@ -173,5 +179,6 @@ module.exports = {
         }).catch(() => {
             agent.add(`Sorry, no news today. Is there anything else I can do for you?`);
           });
-    },
-}
+    }
+};
+
