@@ -1,8 +1,11 @@
 const Feedback = require('../models/feedback');
+const Axios = require('axios');
 const {google} = require("googleapis");
 const timeZone = "America/New_York";
 const timeZoneOffset = "-05:00"; 
+
 const axios = require('axios');
+
 require('dotenv').config();
 
 module.exports = {
@@ -121,7 +124,8 @@ module.exports = {
         getWeather = (z) =>  {
             const weatherURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + z + ",us&APPID=" + process.env.OPENWEATHER_ACCESS_TOKEN;
             console.log(weatherURL);
-            return axios(weatherURL);
+
+            return Axios(weatherURL);
         };
 
         const toFarenheit = kelvin => {
@@ -146,6 +150,7 @@ module.exports = {
             const newsURL = 'https://newsapi.org/v2/everything?language=en&domains=wsj.com,nytimes.com,businessinsider.com&q="' + c + '"&apiKey=' + process.env.NEWS_ACCESS_TOKEN;
             console.log(newsURL);
             return axios.get(newsURL).then(response => {
+
                 return response.data;
             });;
         }
@@ -153,7 +158,9 @@ module.exports = {
         getStock = s => {
             const stockURL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + s + "&outputsize=compact&apikey=" + process.env.ALPHA_ACCESS_TOKEN;
             console.log(stockURL);
+          
             return axios.get(stockURL).then(response => {
+
                 return response.data;
             });
         }
@@ -174,3 +181,4 @@ module.exports = {
           });
     }
 };
+
