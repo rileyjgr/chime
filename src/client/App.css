@@ -14,6 +14,14 @@ form {
     height: 5vh !important;
 }
 
+.img3{
+
+    width:375px;
+    margin-left:50px;
+    margin-top:70px;
+
+}
+
 label {
     padding-bottom: 2vh;
 }
@@ -152,6 +160,97 @@ input[type=file] {
     100% { transform: rotate(360deg); }
 }
 
+
+.badge{
+    margin-left:10px;
+}
+
+input[type=file] {
+    margin: auto;
+}
+
+
+.dash{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.dashboard1{
+
+    background-image: url("https://i.ytimg.com/vi/-MKapbz0GIo/maxresdefault.jpg");
+    font-family: 'Roboto Slab', serif;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.dash2 {
+
+    margin-top:100px;
+}
+.table2{
+    height:374px;
+}
+
+.img{
+    width:70px;
+    height:70px;
+    margin-left:5px;
+    margin-top:15px;
+    margin-bottom:10px;
+}
+.updates{
+    width:90px;
+    height:90px;
+    margin-left:5px;
+    margin-top:5px;
+   
+
+}
+
+.text-myDangerColor {
+    color: #f05b4f;
+    margin-left:5px;
+    margin-right:5px;
+}
+.text-danger {
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+.text-warning {
+    margin-left:5px;
+    margin-right:5px;
+}
+p{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+h4{
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:10px;
+}
+
+.category{
+    margin-left:10px;
+}
+
+.stats{
+
+    margin-left:10px;
+    margin-bottom:10px;
+}
+
+.legend{
+
+    margin-left:5px;
+}
+
+.news{
+    height:360px;
+}
+
+=======
 input[type=file] {
     margin: auto;
 }
@@ -179,3 +278,4 @@ input[type=file] {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 } 
+
