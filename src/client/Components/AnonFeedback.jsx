@@ -33,7 +33,11 @@ class AnonFeedback extends Component {
     console.log(this.state.feedback);
     return (<div id="feedback">
       {this.state.feedback.map(feedback => <div><h5>{feedback.message}</h5>></div>)}
-    </div>)
+
+
+    </div>
+
+    )
 
 
 

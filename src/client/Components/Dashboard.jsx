@@ -11,6 +11,7 @@ import {
   responsiveBar,
   legendBar
 } from "./Variables";
+import { pbkdf2 } from "crypto";
 
 
 
@@ -82,6 +83,32 @@ class Dashboard extends Component {
                   <div className="table-full-width">
                     <table className="table table2">
                       <AnonFeedback />
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <p1>“Thanks for focusing so much on company culture.”</p1>
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <p2>“I would love to get him in front of more of our bigger clients next year.”</p2>
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <p3>“He needs to be more professional and grow up.”</p3>
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      "He sometimes undermines his own leadership.”
+
+
+
                     </table>
                   </div>
                 }
