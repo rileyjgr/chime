@@ -3,7 +3,7 @@ import ChartistGraph from "react-chartist";
 import { Grid, Row, Col } from "react-bootstrap";
 import { Card } from "./Card";
 import { StatsCard } from "./StatsCard";
-import AnonFeedback from "./AnonFeedback";
+// import AnonFeedback from "./AnonFeedback";
 import Navbar from "./Navbar";
 import {
   dataBar,
@@ -81,7 +81,7 @@ class Dashboard extends Component {
                 content={
                   <div className="table-full-width">
                     <table className="table table2">
-                      <AnonFeedback />
+                      {/* <AnonFeedback /> */}
                     </table>
                   </div>
                 }
