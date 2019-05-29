@@ -12,7 +12,7 @@ The Company Assistant.
 
 Integrating chime into your company, will be simple and easy in the future. 
 
-If you would like to implement Chime into your slack or use it for google home, please send Riley and email at rigriffin241@gmail.com.
+If you would like to implement Chime into your slack or use it for google home, please send Riley an email at rigriffin241@gmail.com.
 
 We are currently in early stages, and only have limited amount of beta keys to give out to allow the bot to interact with your google calendar, and other google products. 
 
